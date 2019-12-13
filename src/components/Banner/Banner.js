@@ -18,6 +18,7 @@ const TextContainer = styled.div`
   font-size: 4vw;
   line-height: 1.2;
   color: #fff;
+  font-family: 'quicksand';
 `;
 
 const Name = styled.span`
