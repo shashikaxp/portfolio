@@ -8,8 +8,9 @@ export default function Banner() {
   return (
     <Particles
       style={{
+        background: '#191b21',
         position: 'absolute',
-        background: '#191b21'
+        top: 0
       }}
       params={{
         particles: {

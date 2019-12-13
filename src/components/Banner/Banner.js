@@ -1,19 +1,22 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Background from './Background';
 import styled from 'styled-components';
 
+const ContentWrapper = styled.div`
+  height: 100vh;
+  display: flex;
+  align-content: center;
+  background-color: red;
+  align-items: center;
+`;
+
 const BackgroundWrapper = styled.div`
-  position: relative;
-  min-height: 100vh;
+  flex: 1;
+  z-index: 2;
 `;
 
 const TextContainer = styled.div`
-  position: absolute;
   height: fit-content;
-  left: 0;
-  right: 0;
-  top: 38vh;
-  bottom: 0;
   text-align: center;
   font-size: 4vw;
   line-height: 1.2;
@@ -32,9 +35,9 @@ const Text = styled.p`
 
 export default function Banner() {
   return (
-    <Fragment>
+    <ContentWrapper>
+      <Background />
       <BackgroundWrapper>
-        <Background />
         <TextContainer>
           <Text>
             Hello, i'm <Name>Shashika Weerakkody</Name>
@@ -42,6 +45,6 @@ export default function Banner() {
           <Text>i'm a full-stack web developer</Text>
         </TextContainer>
       </BackgroundWrapper>
-    </Fragment>
+    </ContentWrapper>
   );
 }
