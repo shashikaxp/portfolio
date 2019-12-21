@@ -3,6 +3,7 @@ import Background from './Background';
 import styled from 'styled-components';
 
 const ContentWrapper = styled.div`
+  max-height: 100vh;
   height: 100vh;
   display: flex;
   align-content: center;
