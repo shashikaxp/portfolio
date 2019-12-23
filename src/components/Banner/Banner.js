@@ -6,7 +6,6 @@ const ContentWrapper = styled.div`
   height: -webkit-fill-available;
   display: flex;
   align-content: center;
-  background-color: red;
   align-items: center;
 `;
 
