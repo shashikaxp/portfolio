@@ -3,8 +3,7 @@ import Background from './Background';
 import styled from 'styled-components';
 
 const ContentWrapper = styled.div`
-  max-height: 100vh;
-  height: 100vh;
+  height: -webkit-fill-available;
   display: flex;
   align-content: center;
   background-color: red;
@@ -19,7 +18,7 @@ const BackgroundWrapper = styled.div`
 const TextContainer = styled.div`
   height: fit-content;
   text-align: center;
-  font-size: 4vw;
+  font-size: 5vw;
   line-height: 1.2;
   color: #fff;
   font-family: 'quicksand';
