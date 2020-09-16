@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "4YS98DCEX9.com.mpdp.spotfoodVenue",
+        "paths": [
+          "*",
+          "/"
+        ]
+      }
+    ]
+  }
+}
