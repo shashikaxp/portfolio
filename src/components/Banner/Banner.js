@@ -41,7 +41,7 @@ export default function Banner() {
           <Text>
             Hello, i'm <Name>Shashika Weerakkody</Name>
           </Text>
-          <Text>i'm a full-stack web developer</Text>
+          <Text>i'm a full-stack web developer.</Text>
         </TextContainer>
       </BackgroundWrapper>
     </ContentWrapper>
