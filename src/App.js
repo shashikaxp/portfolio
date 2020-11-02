@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 
-import Banner from './components/Banner/Banner';
+import LandingPage from './components/LandingPage';
 
 function App() {
   return (
-    <div className='App'>
-      <Banner />
+    <div className="App">
+      <LandingPage />
     </div>
   );
 }
