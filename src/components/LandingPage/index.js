@@ -1,16 +1,19 @@
 import React from 'react';
 import Background from './Background';
-import DetailsCard from '../details-card/DetailsCard';
+import DetailsCard from '../DetailsCard';
 
 import './LandingPage.scss';
+import ResponsiveBreakpointHoc from '../hoc/responsiveBreaker';
 
-export default function Banner() {
+const Banner = ({ screenSize }) => {
   return (
     <div>
-      <Background />
+      <Background screenSize={screenSize} />
       <div className="container">
         <DetailsCard />
       </div>
     </div>
   );
-}
+};
+
+export default ResponsiveBreakpointHoc(Banner);

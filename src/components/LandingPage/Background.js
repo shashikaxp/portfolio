@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Particles from 'react-particles-js';
 
-// position: 'absolute',
-// background: '#262a35'
+export default function Banner({ screenSize }) {
+  console.log('asdad', screenSize);
 
-export default function Banner() {
+  const [particle, setParticle] = useState(100);
+
+  const setParticalsesFromScreensize = () => {
+    if (screenSize === 'xlg') {
+      setParticle(250);
+    } else if (screenSize === 'lg') {
+      setParticle(200);
+    } else if (screenSize === 'md') {
+      setParticle(100);
+    } else if (screenSize === 'sm') {
+      setParticle(70);
+    }
+    console.log(particle);
+  };
+
+  useEffect(() => {
+    setParticalsesFromScreensize();
+  }, [screenSize]);
+
   return (
     <Particles
       style={{
@@ -15,7 +33,7 @@ export default function Banner() {
       params={{
         particles: {
           number: {
-            value: 200,
+            value: particle,
           },
           size: {
             value: 3,

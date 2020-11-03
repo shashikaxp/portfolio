@@ -1,4 +1,5 @@
 import React from 'react';
+import ContactList from '../ContactList';
 
 import './DetailsCard.scss';
 
@@ -16,6 +17,9 @@ const DetailsCard = () => {
         build Polished, Innovative and well-detailed Apps with Fluid Animations
         to complement the Design.
       </p>
+      <div>
+        <ContactList />
+      </div>
     </div>
   );
 };
