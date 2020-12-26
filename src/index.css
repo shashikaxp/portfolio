@@ -4,8 +4,8 @@
 }
 
 @font-face {
-  src: url(./assets/fonts/Roboto.ttf);
-  font-family: roboto;
+  src: local('Roboto'), url(./assets/fonts/Roboto.ttf);
+  font-family: 'Roboto';
 }
 
 body {
