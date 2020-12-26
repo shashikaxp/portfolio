@@ -1,6 +1,55 @@
-.container {
+@import './../../assets/styles/colors.module.scss';
+
+.main-container {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(115.95deg, #222222 19.42%, #050505 97.56%);
+
+  .content {
+    width: 50vw;
+    text-align: center;
+  }
+
+  .name {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 2rem;
+    line-height: 1;
+  }
+
+  .discription {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 2.5rem;
+  }
+
+  button {
+    border: 3px solid $color-green;
+    box-sizing: border-box;
+    border-radius: 7px;
+    padding: 10px 20px;
+    background: transparent;
+    color: white;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+
+    color: #08ca96;
+  }
 }
