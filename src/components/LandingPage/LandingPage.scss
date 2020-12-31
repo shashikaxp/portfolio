@@ -1,4 +1,5 @@
 @import './../../assets/styles/colors.module.scss';
+@import './../../assets/styles/mixins.module.scss';
 
 .main-container {
   height: 100vh;
@@ -8,7 +9,7 @@
   background: linear-gradient(115.95deg, #222222 19.42%, #050505 97.56%);
 
   .content {
-    width: 50vw;
+    width: 55vw;
     text-align: center;
   }
 
@@ -33,13 +34,14 @@
     text-align: center;
     color: white;
     margin-bottom: 2.5rem;
+    flex-direction: column;
   }
 
   button {
     border: 3px solid $color-green;
     box-sizing: border-box;
     border-radius: 7px;
-    padding: 10px 20px;
+    padding: 0.3em 1.6em;
     background: transparent;
     color: white;
 
@@ -51,5 +53,24 @@
     text-align: center;
 
     color: #08ca96;
+    margin-top: 2rem;
+  }
+}
+
+@include medium {
+  .main-container {
+    .name {
+      font-size: 2rem;
+    }
+
+    .discription {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 0.1em 1em;
+    }
   }
 }
