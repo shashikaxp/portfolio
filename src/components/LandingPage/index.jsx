@@ -36,7 +36,7 @@ const LandingPage = ({ screenSize }) => {
 
   const typeName = (typewriter) => {
     typewriter
-      .typeString('Hi..')
+      .typeString('Hi...')
       .pauseFor(1000)
       .deleteAll()
       .typeString('I am')
