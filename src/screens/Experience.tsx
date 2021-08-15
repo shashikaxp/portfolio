@@ -2,6 +2,7 @@ import React from 'react';
 import kinzaBg from '../assets/img/kinza_bg.jpeg';
 
 import { CompanyProfile } from '../components/CompanyProfile';
+import { Projects } from '../components/Projects';
 import { Stepper } from '../components/Stepper';
 
 interface ExperienceProps {}
@@ -23,6 +24,9 @@ export const Experience: React.FC<ExperienceProps> = ({}) => {
       <Stepper steps={['1', '2', '3', '4']} />
       <div className="ml-8 w-1/3">
         <CompanyProfile {...companyData} />
+      </div>
+      <div className="ml-20">
+        <Projects projects={['1', '2', '3', '4']} />
       </div>
     </div>
   );
