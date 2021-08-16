@@ -1,8 +1,8 @@
 import React from 'react';
 
 interface stepperProps {
-  steps: string[];
-  changeCompany: (id: string) => void;
+  steps: number[];
+  changeCompany: (id: number) => void;
 }
 
 export const Stepper: React.FC<stepperProps> = ({ steps, changeCompany }) => {
