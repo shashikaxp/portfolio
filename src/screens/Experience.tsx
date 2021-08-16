@@ -48,10 +48,10 @@ export const Experience: React.FC<ExperienceProps> = () => {
         <animated.div
           key={i}
           style={{ display, y }}
-          className="absolute w-screen h-screen"
+          className="absolute w-screen h-screen "
         >
           <animated.div
-            className="shadow-2xl min-h-screen bg-cover backdrop-blur-md flex items-center justify-center"
+            className="shadow-2xl min-h-screen bg-cover backdrop-blur-md  items-center justify-center flex flex-col md:flex-row"
             style={{ scale, backgroundImage: `url(${CompanyData[i].bg})` }}
           >
             {i !== 0 && (
@@ -60,10 +60,10 @@ export const Experience: React.FC<ExperienceProps> = () => {
                 className="text-gray-200 text-8xl absolute top-0 mt-4 cursor-pointer"
               />
             )}
-            <div className="ml-8 w-1/3">
+            <div className="md:ml-8 md:w-1/3">
               <CompanyProfile {...CompanyData[i]} />
             </div>
-            <div className="ml-20 w-2/4">
+            <div className="w-full md:ml-20 mt-4 md:w-2/4  px-4 md:px-0">
               <Projects projects={CompanyData[i].projects} />
             </div>
             {i !== CompanyData.length - 1 && (

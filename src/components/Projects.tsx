@@ -74,10 +74,14 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 
   return (
     <>
-      <div className="flex space-x-4 relative">
+      <div className="flex space-x-4 relative overflow-hidden">
         {springs.map((styles, i) => {
           return (
-            <animated.div style={styles} className="bg-white w-28 h-48" key={i}>
+            <animated.div
+              style={styles}
+              className="bg-white w-28 h-48 flex-shrink-0"
+              key={i}
+            >
               {i}
             </animated.div>
           );

@@ -15,7 +15,7 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
   description,
 }) => {
   return (
-    <div className="text-white font-primary">
+    <div className="text-white font-primary text-center md:text-left">
       <div className="text-4xl font-medium">{name}</div>
       <div className="text-2xl mt-4 font-light">{position}</div>
       <div className="text-xl mt-4 font-light">{time}</div>
