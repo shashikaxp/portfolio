@@ -1,13 +1,11 @@
 import React, { useRef } from 'react';
-import kinzaBg from '../assets/img/kinza_bg.jpeg';
-import epigroBg from '../assets/img/epigro_bg.jpg';
 
-import { map } from 'lodash';
+import { BsChevronCompactUp, BsChevronCompactDown } from 'react-icons/bs';
 
 import { CompanyProfile } from '../components/CompanyProfile';
 import { Projects } from '../components/Projects';
-import { Stepper } from '../components/Stepper';
 import { animated, useSprings } from 'react-spring';
+import { CompanyData } from '../constant/companyData';
 
 interface ExperienceProps {}
 
@@ -22,31 +20,8 @@ interface CompanyData {
 }
 
 export const Experience: React.FC<ExperienceProps> = () => {
-  const companyData: CompanyData[] = [
-    {
-      id: 0,
-      name: 'Kinza Pty LTD',
-      position: 'Internship',
-      time: '2015 - 2016 (1 year 2 Months )',
-      description:
-        "It is a long established fact that opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page ed",
-      bg: kinzaBg,
-      projects: ['1', '2', '3', '4'],
-    },
-    {
-      id: 1,
-      name: 'Epigro Solar Lanka',
-      position: 'Trainee Software Engineer',
-      time: '2015 - 2016 (1 year 2 Months )',
-      description:
-        "It is a long established fact that opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page ed",
-      bg: epigroBg,
-      projects: ['1', '2'],
-    },
-  ];
-
   const index = useRef(0);
-  const [props, set] = useSprings(companyData.length, (i) => ({
+  const [props, set] = useSprings(CompanyData.length, (i) => ({
     y: i * window.innerHeight,
     scale: 1,
     display: 'block',
@@ -68,7 +43,7 @@ export const Experience: React.FC<ExperienceProps> = () => {
   };
 
   return (
-    <div className="overflow-hidden h-screen w-full fixed select-none overscroll-y-contain">
+    <div className="overflow-hidden h-screen w-full fixed select-none overscroll-y-contain bg-gray-200">
       {props.map(({ y, display, scale }, i) => (
         <animated.div
           key={i}
@@ -76,19 +51,27 @@ export const Experience: React.FC<ExperienceProps> = () => {
           className="absolute w-screen h-screen"
         >
           <animated.div
-            className="min-h-screen bg-cover backdrop-blur-md flex items-center justify-center"
-            style={{ scale, backgroundImage: `url(${companyData[i].bg})` }}
+            className="shadow-2xl min-h-screen bg-cover backdrop-blur-md flex items-center justify-center"
+            style={{ scale, backgroundImage: `url(${CompanyData[i].bg})` }}
           >
-            <Stepper
-              steps={map(companyData, 'id')}
-              changeCompany={changeCompany}
-            />
+            {i !== 0 && (
+              <BsChevronCompactUp
+                onClick={() => changeCompany(i - 1)}
+                className="text-gray-200 text-8xl absolute top-0 mt-4 cursor-pointer"
+              />
+            )}
             <div className="ml-8 w-1/3">
-              <CompanyProfile {...companyData[i]} />
+              <CompanyProfile {...CompanyData[i]} />
             </div>
             <div className="ml-20 w-2/4">
-              <Projects projects={companyData[i].projects} />
+              <Projects projects={CompanyData[i].projects} />
             </div>
+            {i !== CompanyData.length - 1 && (
+              <BsChevronCompactDown
+                onClick={() => changeCompany(i + 1)}
+                className="text-gray-200 text-8xl absolute bottom-0 mb-4 cursor-pointer"
+              />
+            )}
           </animated.div>
         </animated.div>
       ))}
