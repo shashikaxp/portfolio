@@ -1,6 +1,16 @@
 import kinzaBg from '../assets/img/kinza_bg.jpeg';
 import epigroBg from '../assets/img/epigro_bg.jpg';
 
+import afraymond from './../assets/img/projects/afr.jpeg';
+
+export interface Project {
+  name: string;
+  description: string;
+  involvement: string;
+  technologies: string[];
+  image: string;
+}
+
 interface CompanyData {
   id: number;
   name: string;
@@ -8,8 +18,35 @@ interface CompanyData {
   time: string;
   description: string;
   bg: string;
-  projects: string[];
+  projects: Project[];
 }
+
+const kinzaProjects: Project[] = [
+  {
+    name: 'AF Raymond',
+    image: afraymond,
+    description:
+      "It is a long established fact that opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page ed",
+    involvement: 'Heavy',
+    technologies: ['HTML', 'CSS', 'Jquery'],
+  },
+  {
+    name: 'AF Raymond',
+    image: afraymond,
+    description:
+      "It is a long established fact that opposed to using 'Conike readable English. Many desktop publishing packages and web page ed",
+    involvement: 'Heavy',
+    technologies: ['HTML2', 'CSS2', 'Jquery2'],
+  },
+  {
+    name: 'AF Raymond',
+    image: afraymond,
+    description:
+      'making it look like readable English. Many desktop publib page ed',
+    involvement: 'Heavy',
+    technologies: ['HTML3', 'CSS3', 'Jquery3', 'HTML3', 'CSS3', 'Jquery3'],
+  },
+];
 
 export const CompanyData: CompanyData[] = [
   {
@@ -20,7 +57,7 @@ export const CompanyData: CompanyData[] = [
     description:
       "It is a long established fact that opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page ed",
     bg: kinzaBg,
-    projects: ['1', '2', '3', '4'],
+    projects: kinzaProjects,
   },
   {
     id: 1,
@@ -30,7 +67,7 @@ export const CompanyData: CompanyData[] = [
     description:
       "It is a long established fact that opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page ed",
     bg: epigroBg,
-    projects: ['1', '2'],
+    projects: [],
   },
   {
     id: 2,
@@ -40,6 +77,6 @@ export const CompanyData: CompanyData[] = [
     description:
       "It is a long established fact that opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page ed",
     bg: kinzaBg,
-    projects: ['1', '2', '3', '4'],
+    projects: [],
   },
 ];

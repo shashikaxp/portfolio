@@ -1,11 +1,10 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useSprings, animated } from 'react-spring';
+import { Project } from 'src/constant/companyData';
 
 interface ProjectsProps {
-  projects: string[];
+  projects: Project[];
 }
 
 export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
@@ -15,6 +14,9 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
     opacity: 1,
     x: 0,
     y: 0,
+    width: '300px',
+    height: '550px',
+    scale: 1,
   }));
 
   useEffect(() => {
@@ -22,6 +24,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
       opacity: getOpacity(index),
       x: getX(index),
       y: getY(index),
+      scale: getScale(index),
     }));
   }, [currentIndex]);
 
@@ -50,7 +53,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
     if (index == 0) {
       x = 0;
     } else {
-      x = index < currentIndex ? null : currentIndex * -128;
+      x = index < currentIndex ? null : currentIndex * -316;
     }
     return x;
   };
@@ -63,8 +66,8 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   const getOpacity = (index: number) => {
     let opacity;
 
-    if (index < currentIndex) {
-      opacity = currentIndex - index === 1 ? 0.5 : 0;
+    if (index !== currentIndex) {
+      opacity = currentIndex - index === 1 ? 0.5 : 0.8;
     } else {
       opacity = 1;
     }
@@ -72,17 +75,38 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
     return opacity;
   };
 
+  const getScale = (index: number) => {
+    if (index <= currentIndex) {
+      return 1;
+    } else {
+      return 1 - (index - currentIndex) * 0.1;
+    }
+  };
+
   return (
     <>
-      <div className="flex space-x-4 relative overflow-hidden">
+      <div className="flex space-x-4 relative overflow-hidden text-text">
         {springs.map((styles, i) => {
           return (
             <animated.div
               style={styles}
-              className="bg-white w-28 h-48 flex-shrink-0"
+              className="bg-gray-200 flex-shrink-0"
               key={i}
             >
-              {i}
+              <div className="p-4">
+                <img src={projects[i].image} alt="project-image" />
+              </div>
+              <div className="flex flex-col items-center px-4">
+                <div className="font-bold text-2xl mb-4">
+                  {projects[i].name}
+                </div>
+                <div className="mb-4">{projects[i].description}</div>
+                <div className="flex flex-wrap items-center justify-center gap-x-2 font-bold">
+                  {projects[i].technologies.map((t) => {
+                    return <div key="t">{t}</div>;
+                  })}
+                </div>
+              </div>
             </animated.div>
           );
         })}

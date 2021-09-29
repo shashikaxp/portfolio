@@ -7,6 +7,12 @@ module.exports = {
       fontFamily: {
         primary: "'Source Sans Pro'",
       },
+      colors: {
+        text: {
+          light: '#4E4E4E',
+          DEFAULT: '#4E4E4E',
+        },
+      },
     },
   },
   variants: {
