@@ -122,7 +122,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
             <animated.div
               style={styles}
               key={projects[i].id}
-              className="bg-white flex-shrink-0"
+              className="bg-white flex-shrink-0 rounded-2xl"
             >
               <Link
                 to={`/projects/${projects[i].id}`}
@@ -133,6 +133,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                     <img
                       id="project-image"
                       src={projects[i].image}
+                      className="rounded-2xl"
                       alt="project-image"
                     />
                   </div>

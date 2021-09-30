@@ -25,11 +25,13 @@ const TransitionLayer: React.FC<TransitionLayerProps> = ({
       height: itemPosition.imagePosition.height,
       width: itemPosition.imagePosition.width,
       transform: `translate(${itemPosition.imagePosition.left}px, ${itemPosition.imagePosition.top}px)`,
+      borderRadius: '16px',
     },
     to: {
       height: imageToPosition.height,
       width: imageToPosition.width,
       transform: `translate(${imageToPosition.left}px, ${imageToPosition.top}px)`,
+      borderRadius: '0px',
     },
     reverse: isReverse,
     onRest: onAnimationEnd,
@@ -40,11 +42,13 @@ const TransitionLayer: React.FC<TransitionLayerProps> = ({
       height: `calc(0vh + ${itemPosition.containerPosition.height}px)`,
       width: `calc(0vw + ${itemPosition.containerPosition.width}px)`,
       transform: `translate(${itemPosition.containerPosition.left}px, ${itemPosition.containerPosition.top}px)`,
+      borderRadius: '16px',
     },
     to: {
       height: 'calc(100vh + 0px)',
       width: 'calc(100vw + 0px)',
       transform: 'translate(0px, 0px)',
+      borderRadius: '0px',
     },
     reverse: isReverse,
   });
