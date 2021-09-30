@@ -36,16 +36,16 @@ export const Experience: React.FC = () => {
           className="absolute w-screen h-screen "
         >
           <animated.div
-            className="shadow-2xl min-h-screen bg-cover backdrop-blur-md  items-center justify-center flex flex-col md:flex-row"
+            className="shadow-2xl min-h-screen bg-cover backdrop-blur-md  items-center justify-between flex flex-col md:flex-row"
             style={{ scale, backgroundImage: `url(${CompanyData[i].bg})` }}
           >
-            <div className="min-h-screen md:ml-8 md:w-1/3 flex items-center justify-center">
+            <div className="min-h-screen md:ml-20 md:w-1/3 flex items-center justify-center">
               <CompanyProfile
                 {...CompanyData[i]}
                 changeCompany={changeCompany}
               />
             </div>
-            <div className="w-full md:ml-20 mt-4 md:w-2/4  px-4 md:px-0">
+            <div className="w-full md:ml-20 mt-4 md:w-2/4  pl-4 md:px-0">
               <Projects projects={CompanyData[i].projects} />
             </div>
           </animated.div>

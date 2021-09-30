@@ -4,7 +4,11 @@ import { useHistory, useLocation } from 'react-router';
 
 import TransitionLayer from './../components/TransitionLayer';
 import afr from './../assets/img/projects/afr.jpeg';
-import { Positions, ProjectDetailsLocation } from './../types/animation';
+import {
+  AnimatedComponentProps,
+  Positions,
+  ProjectDetailsLocation,
+} from './../types/animation';
 import { TechChip } from './../components/TechChip';
 import { ActionBtn } from './../components/ActionBtn';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
@@ -16,7 +20,11 @@ const defaultValues = {
   top: 0,
 };
 
-export const ProjectDetails: React.FC = () => {
+export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
+  match,
+  isReverse,
+  onPageAnimationEnd,
+}) => {
   const history = useHistory();
   const imageRef = useRef<HTMLImageElement>(null);
   const location = useLocation<ProjectDetailsLocation>();
@@ -27,13 +35,16 @@ export const ProjectDetails: React.FC = () => {
     Positions & { transform: string }
   >();
   const [showDescription, setShowDescription] = useState(false);
-  const [isReverse, setIsReverse] = useState(false);
 
   const { imageRect = null, containerRect = null } =
     location && location.state ? location.state : {};
-  //   // Stores the listing page location onto a state
+
   const [listingPageImageRect] = useState(imageRect);
   const [listingPageContainerRect] = useState(containerRect);
+
+  useEffect(() => {
+    if (isReverse) setShowDescription(false);
+  }, [isReverse]);
 
   useEffect(() => {
     const imageDimensions = imageRef?.current?.getBoundingClientRect();
@@ -66,14 +77,14 @@ export const ProjectDetails: React.FC = () => {
 
   const onAnimationEnd = () => {
     if (isReverse) {
-      history.goBack();
+      onPageAnimationEnd();
+    } else {
+      setShowDescription(true);
     }
-    setShowDescription(true);
   };
 
   const close = () => {
-    setIsReverse(true);
-    setShowDescription(false);
+    history.goBack();
   };
 
   const getClasses = () => {
@@ -86,7 +97,7 @@ export const ProjectDetails: React.FC = () => {
   };
 
   return (
-    <div className="absolute top-0 left-0 z-[2] select-none">
+    <div className="absolute top-0 left-0 z-[2] select-none overflow-hidden">
       <div className="min-h-screen">
         {!showDescription &&
           containerPosition &&
