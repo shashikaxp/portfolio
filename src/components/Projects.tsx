@@ -46,7 +46,8 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
       opacity: getOpacity(index),
       x: getX(index),
       y: getY(index),
-      scale: getScale(index),
+      height: getHeight(index),
+      width: getWidth(index),
     }));
   }, [currentIndex]);
 
@@ -97,17 +98,25 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
     return opacity;
   };
 
-  const getScale = (index: number) => {
+  const getHeight = (index: number) => {
     if (index <= currentIndex) {
-      return 1;
+      return '550px';
     } else {
-      return 0.85;
+      return '500px';
+    }
+  };
+
+  const getWidth = (index: number) => {
+    if (index <= currentIndex) {
+      return '300px';
+    } else {
+      return '250px';
     }
   };
 
   return (
     <>
-      <div className="flex space-x-4 relative overflow-hidden text-text">
+      <div className="flex space-x-4 relative overflow-hidden items-center text-text">
         {springs.map((styles, i) => {
           return (
             <animated.div
