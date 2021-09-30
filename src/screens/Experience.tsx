@@ -5,19 +5,7 @@ import { Projects } from '../components/Projects';
 import { animated, useSprings } from 'react-spring';
 import { CompanyData } from '../constant/companyData';
 
-interface ExperienceProps {}
-
-interface CompanyData {
-  id: number;
-  name: string;
-  position: string;
-  time: string;
-  description: string;
-  bg: string;
-  projects: string[];
-}
-
-export const Experience: React.FC<ExperienceProps> = () => {
+export const Experience: React.FC = () => {
   const index = useRef(0);
   const [props, set] = useSprings(CompanyData.length, (i) => ({
     y: i * window.innerHeight,
@@ -40,7 +28,7 @@ export const Experience: React.FC<ExperienceProps> = () => {
   };
 
   return (
-    <div className="overflow-hidden h-screen w-full fixed select-none overscroll-y-contain bg-gray-200">
+    <div className="overflow-hidden h-screen w-full select-none overscroll-y-contain absolute top-0 left-0 z-[1]">
       {props.map(({ y, display, scale }, i) => (
         <animated.div
           key={i}
@@ -48,7 +36,7 @@ export const Experience: React.FC<ExperienceProps> = () => {
           className="absolute w-screen h-screen "
         >
           <animated.div
-            className="shadow-2xl bg-red-500 min-h-screen bg-cover backdrop-blur-md  items-center justify-center flex flex-col md:flex-row"
+            className="shadow-2xl min-h-screen bg-cover backdrop-blur-md  items-center justify-center flex flex-col md:flex-row"
             style={{ scale, backgroundImage: `url(${CompanyData[i].bg})` }}
           >
             <div className="min-h-screen md:ml-8 md:w-1/3 flex items-center justify-center">

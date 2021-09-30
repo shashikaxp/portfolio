@@ -9,7 +9,7 @@ module.exports = {
       },
       colors: {
         text: {
-          light: '#4E4E4E',
+          light: '#5F5F5F',
           DEFAULT: '#4E4E4E',
         },
       },

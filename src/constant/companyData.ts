@@ -2,27 +2,11 @@ import kinzaBg from '../assets/img/kinza_bg.jpeg';
 import epigroBg from '../assets/img/epigro_bg.jpg';
 
 import afraymond from './../assets/img/projects/afr.jpeg';
-
-export interface Project {
-  name: string;
-  description: string;
-  involvement: string;
-  technologies: string[];
-  image: string;
-}
-
-interface CompanyData {
-  id: number;
-  name: string;
-  position: string;
-  time: string;
-  description: string;
-  bg: string;
-  projects: Project[];
-}
+import { Project, CompanyData as CompanyDataType } from './../types/constants';
 
 const kinzaProjects: Project[] = [
   {
+    id: 'afr1',
     name: 'AF Raymond',
     image: afraymond,
     description:
@@ -31,6 +15,7 @@ const kinzaProjects: Project[] = [
     technologies: ['HTML', 'CSS', 'Jquery'],
   },
   {
+    id: 'afr2',
     name: 'AF Raymond',
     image: afraymond,
     description:
@@ -39,16 +24,17 @@ const kinzaProjects: Project[] = [
     technologies: ['HTML2', 'CSS2', 'Jquery2'],
   },
   {
+    id: 'afr3',
     name: 'AF Raymond',
     image: afraymond,
     description:
       'making it look like readable English. Many desktop publib page ed',
     involvement: 'Heavy',
-    technologies: ['HTML3', 'CSS3', 'Jquery3', 'HTML3', 'CSS3', 'Jquery3'],
+    technologies: ['HTML3', 'CSS3', 'Jquery3', 'HTML4', 'CSS4', 'Jquery4'],
   },
 ];
 
-export const CompanyData: CompanyData[] = [
+export const CompanyData: CompanyDataType[] = [
   {
     id: 0,
     name: 'Kinza Pty LTD',

@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { MouseEvent, useEffect, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 import { useSprings, animated } from 'react-spring';
-import { Project } from 'src/constant/companyData';
+import { Project } from './../types/constants';
 
 interface ProjectsProps {
   projects: Project[];
@@ -9,6 +10,27 @@ interface ProjectsProps {
 
 export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const history = useHistory();
+
+  const onClickContainer = (
+    event: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>,
+    projectId: string
+  ) => {
+    const { currentTarget } = event;
+    if (!currentTarget) return;
+
+    const containerRect = currentTarget
+      .querySelector('#project-container')
+      ?.getBoundingClientRect();
+
+    const imageRect = currentTarget
+      .querySelector('#project-image')
+      ?.getBoundingClientRect();
+
+    history.push(`/projects/${projectId}`, { containerRect, imageRect });
+    event.preventDefault();
+    event.stopPropagation();
+  };
 
   const [springs, api] = useSprings(projects.length, (index) => ({
     opacity: 1,
@@ -79,7 +101,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
     if (index <= currentIndex) {
       return 1;
     } else {
-      return 1 - (index - currentIndex) * 0.1;
+      return 0.85;
     }
   };
 
@@ -90,23 +112,34 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
           return (
             <animated.div
               style={styles}
-              className="bg-gray-200 flex-shrink-0"
-              key={i}
+              key={projects[i].id}
+              className="bg-white flex-shrink-0"
             >
-              <div className="p-4">
-                <img src={projects[i].image} alt="project-image" />
-              </div>
-              <div className="flex flex-col items-center px-4">
-                <div className="font-bold text-2xl mb-4">
-                  {projects[i].name}
+              <Link
+                to={`/projects/${projects[i].id}`}
+                onClick={(e) => onClickContainer(e, projects[i].id)}
+              >
+                <div className="h-full " id="project-container">
+                  <div className="p-4">
+                    <img
+                      id="project-image"
+                      src={projects[i].image}
+                      alt="project-image"
+                    />
+                  </div>
+                  <div className="flex flex-col items-center px-4">
+                    <div className="font-bold text-2xl mb-4">
+                      {projects[i].name}
+                    </div>
+                    <div className="mb-4">{projects[i].description}</div>
+                    <div className="flex flex-wrap items-center justify-center gap-x-2 font-bold">
+                      {projects[i].technologies.map((t) => {
+                        return <div key={t}>{t}</div>;
+                      })}
+                    </div>
+                  </div>
                 </div>
-                <div className="mb-4">{projects[i].description}</div>
-                <div className="flex flex-wrap items-center justify-center gap-x-2 font-bold">
-                  {projects[i].technologies.map((t) => {
-                    return <div key="t">{t}</div>;
-                  })}
-                </div>
-              </div>
+              </Link>
             </animated.div>
           );
         })}
