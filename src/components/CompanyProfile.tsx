@@ -1,3 +1,4 @@
+import { animated, useSpring } from '@react-spring/web';
 import React from 'react';
 
 import { BsChevronCompactUp, BsChevronCompactDown } from 'react-icons/bs';
@@ -20,8 +21,19 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
   description,
   changeCompany,
 }) => {
+  const styles = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: {
+      duration: 300,
+    },
+  });
+
   return (
-    <div className="flex items-center justify-center flex-col">
+    <animated.div
+      style={styles}
+      className="flex items-center justify-center flex-col"
+    >
       <div className="text-white font-primary text-center relative md:text-left ">
         <div className="absolute -top-24 h-24">
           {id !== 0 && (
@@ -44,6 +56,6 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
           )}
         </div>
       </div>
-    </div>
+    </animated.div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { MouseEvent, useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
-import { useSprings, animated } from 'react-spring';
+import { useSprings, useSpring, animated } from 'react-spring';
 import { Project } from './../types/constants';
 
 interface ProjectsProps {
@@ -11,6 +11,12 @@ interface ProjectsProps {
 export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const history = useHistory();
+
+  const styles = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    delay: 200,
+  });
 
   const onClickContainer = (
     event: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>,
@@ -116,7 +122,10 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 
   return (
     <>
-      <div className="flex space-x-4 relative overflow-hidden items-center text-text">
+      <animated.div
+        style={styles}
+        className="flex space-x-4 relative overflow-hidden items-center text-text"
+      >
         {springs.map((styles, i) => {
           return (
             <animated.div
@@ -128,7 +137,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                 to={`/projects/${projects[i].id}`}
                 onClick={(e) => onClickContainer(e, projects[i].id)}
               >
-                <div className="h-full " id="project-container">
+                <div className="h-full" id="project-container">
                   <div className="p-4">
                     <img
                       id="project-image"
@@ -153,7 +162,8 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
             </animated.div>
           );
         })}
-      </div>
+      </animated.div>
+
       <div className="flex justify-between mt-10">
         <button className="bg-white w-10 h-10" onClick={prev}>
           prev
