@@ -1,6 +1,7 @@
 import React, { MouseEvent, useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
+import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { useSprings, useSpring, animated } from 'react-spring';
 import { Project } from './../types/constants';
 
@@ -164,13 +165,19 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         })}
       </animated.div>
 
-      <div className="flex justify-between mt-10">
-        <button className="bg-white w-10 h-10" onClick={prev}>
-          prev
-        </button>
-        <button className="bg-white w-10 h-10" onClick={next}>
-          next
-        </button>
+      <div className="flex items-center justify-center mt-10 gap-2">
+        <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:opacity-80">
+          <BsChevronCompactLeft
+            onClick={prev}
+            className="text-2xl cursor-pointer text-text-light "
+          />
+        </div>
+        <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:opacity-80">
+          <BsChevronCompactRight
+            onClick={next}
+            className="text-2xl cursor-pointer text-text-light"
+          />
+        </div>
       </div>
     </>
   );
