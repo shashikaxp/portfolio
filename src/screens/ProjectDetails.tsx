@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router';
 
 import TransitionLayer from './../components/TransitionLayer';
-import afr from './../assets/img/projects/afr.jpeg';
+
 import {
   AnimatedComponentProps,
   Positions,
@@ -14,6 +14,7 @@ import { ActionBtn } from './../components/ActionBtn';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { useSpring } from '@react-spring/core';
 import { animated } from '@react-spring/web';
+import { useGetProject } from 'src/hooks/useGetProject';
 
 const defaultValues = {
   height: 0,
@@ -37,12 +38,20 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
     Positions & { transform: string }
   >();
   const [showDescription, setShowDescription] = useState(false);
+  const [projectImage, setProjectImage] = useState<string>('');
 
   const { imageRect = null, containerRect = null } =
     location && location.state ? location.state : {};
 
   const [listingPageImageRect] = useState(imageRect);
   const [listingPageContainerRect] = useState(containerRect);
+  const projectData = useGetProject(match?.params?.id);
+
+  useEffect(() => {
+    if (projectData) {
+      setProjectImage(projectData.projectImg || '');
+    }
+  }, [projectData]);
 
   useEffect(() => {
     if (isReverse) setShowDescription(false);
@@ -113,7 +122,7 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
             <TransitionLayer
               itemPosition={itemPosition}
               imageToPosition={imageToPosition}
-              image={afr}
+              image={projectImage}
               onAnimationEnd={onAnimationEnd}
               isReverse={isReverse}
             />
@@ -133,26 +142,19 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
           <div className="flex-shrink-0 w-1/4 min-h-screen p-4 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-center">
-                <img className="w-36 h-36" ref={imageRef} src={afr} />
+                <img className="w-36 h-36" ref={imageRef} src={projectImage} />
               </div>
               <animated.div style={styles}>
                 <div className="text-center mt-4 font-bold text-3xl text-text">
-                  <h1>A.F Raymond</h1>
+                  <h1>{projectData?.projectName}</h1>
                 </div>
                 <div className="text-center mt-4 text-text">
-                  <p>
-                    asdsad asdkjhwe wqsdjhwqe sadjhqwe sadjkhqwe asdkjhqwe
-                    asdkjhqwe sadkjhqwe sadjkhqwe kjhsd qwejkhsad iqwue
-                    sadjkhqwe uiwqejsadh qwesadjkhqwe uasdjh
-                  </p>
+                  <p>{projectData?.clientDescription}</p>
                 </div>
                 <div className="mt-8 flex gap-2 flex-wrap justify-center">
-                  <TechChip label="HTML" />
-                  <TechChip label="CSS" />
-                  <TechChip label="Jquery" />
-                  <TechChip label="23" />
-                  <TechChip label="HTM321L" />
-                  <TechChip label="CS23S" />
+                  {projectData?.projectDetails.technologies.map((tech) => {
+                    return <TechChip key={tech} label={tech} />;
+                  })}
                 </div>
               </animated.div>
             </div>
@@ -160,11 +162,17 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
               style={styles}
               className="p-4 flex gap-7 items-center justify-center"
             >
-              <ActionBtn data="sads" type="github" />
-              <ActionBtn data="sads" type="visit" />
+              {projectData?.projectDetails.actionButtons.map(
+                ({ data, type }) => {
+                  return <ActionBtn key={type} data={data} type={type} />;
+                }
+              )}
             </animated.div>
           </div>
-          <div className="bg-red-50 border-r border-text-light min-h-[calc(100vh-2rem)]"></div>
+          <animated.div
+            style={styles}
+            className="bg-red-50 border-r border-text-light min-h-[calc(100vh-2rem)]"
+          ></animated.div>
           <animated.div
             style={styles}
             className="w-full min-h-screen px-8 py-4"
@@ -174,13 +182,9 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
                 My Responsibilities
               </h1>
               <ul className="list-disc list-inside text-text-light">
-                <li>sadsad asd asd asd</li>
-                <li>sadsad qwe asdasd sadsa</li>
-                <li>sadsad asd asdwqesad</li>
-                <li>ssad asdq asd wqweeadsad </li>
-                <li>sads qwesad wq esadqwe dsaad asdqwe</li>
-                <li>sadsdsad qwesad qweasder asdqwe ad</li>
-                <li>sad sadqe dsqds wqwe d</li>
+                {projectData?.projectDetails.responsibilities.map((res) => {
+                  return <li key={res}>{res}</li>;
+                })}
               </ul>
             </div>
             <div>

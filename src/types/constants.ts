@@ -18,3 +18,21 @@ export interface CompanyData {
 }
 
 export type ActionType = 'github' | 'visit';
+
+interface ActionButton {
+  type: ActionType;
+  data: string;
+}
+
+export interface ProjectDetails {
+  id: string;
+  projectName: string;
+  projectImg: string;
+  clientDescription: string;
+  projectDetails: {
+    technologies: string[];
+    responsibilities: string[];
+    screenShots: string[];
+    actionButtons: ActionButton[];
+  };
+}

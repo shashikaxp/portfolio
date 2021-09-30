@@ -2,11 +2,13 @@ import kinzaBg from '../assets/img/kinza_bg.jpeg';
 import epigroBg from '../assets/img/epigro_bg.jpg';
 
 import afraymond from './../assets/img/projects/afr.jpeg';
+import sr from './../assets/img/projects/sr.png';
+
 import { Project, CompanyData as CompanyDataType } from './../types/constants';
 
 const kinzaProjects: Project[] = [
   {
-    id: 'afr1',
+    id: 'afr',
     name: 'AF Raymond',
     image: afraymond,
     description:
@@ -15,13 +17,13 @@ const kinzaProjects: Project[] = [
     technologies: ['HTML', 'CSS', 'Jquery'],
   },
   {
-    id: 'afr2',
-    name: 'AF Raymond',
-    image: afraymond,
+    id: 'sr',
+    name: 'Snailruns',
+    image: sr,
     description:
       "It is a long established fact that opposed to using 'Conike readable English. Many desktop publishing packages and web page ed",
     involvement: 'Heavy',
-    technologies: ['HTML2', 'CSS2', 'Jquery2'],
+    technologies: ['Wordpress', 'PHP', 'HTML', 'CSS'],
   },
   {
     id: 'afr3',
