@@ -18,7 +18,7 @@ export const ProjectData: ProjectDetails[] = [
       ],
       screenShots: [],
       technologies: ['HTML', 'CSS', 'Jquery'],
-      responsibilities: [
+      contribution: [
         'ASdsadsad asd asde asdqwe sadqwesad sdqwe asdqwe asdqwe',
         'ASdsaasdqwe sadqwesad sdqwe asdqwe',
         'ASdsadsad asd asde asdqwe sadqwewe asdqwe asdqwe',
@@ -42,7 +42,7 @@ export const ProjectData: ProjectDetails[] = [
       ],
       screenShots: [],
       technologies: ['PHP', 'Wordpress', 'HTML', 'CSS'],
-      responsibilities: [
+      contribution: [
         'ASdsadsad asd asde asdqwe sadqwesad sdqwe asdqwe asdqwe',
         'ASdsaasdqwe sadqwesad sdqwe asdqwe',
         'ASdsadsad asd asde asdqwe sadqwewe asdqwe asdqwe',

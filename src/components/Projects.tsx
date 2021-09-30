@@ -116,7 +116,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
     if (index <= currentIndex) {
       return '300px';
     } else {
-      return '250px';
+      return '275px';
     }
   };
 

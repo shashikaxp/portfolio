@@ -31,7 +31,7 @@ export interface ProjectDetails {
   clientDescription: string;
   projectDetails: {
     technologies: string[];
-    responsibilities: string[];
+    contribution: string[];
     screenShots: string[];
     actionButtons: ActionButton[];
   };

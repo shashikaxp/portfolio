@@ -179,10 +179,10 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
           >
             <div>
               <h1 className="text-2xl font-bold text-text mb-4">
-                My Responsibilities
+                My Contribution
               </h1>
               <ul className="list-disc list-inside text-text-light">
-                {projectData?.projectDetails.responsibilities.map((res) => {
+                {projectData?.projectDetails.contribution.map((res) => {
                   return <li key={res}>{res}</li>;
                 })}
               </ul>
