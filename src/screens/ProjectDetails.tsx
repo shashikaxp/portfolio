@@ -12,6 +12,8 @@ import {
 import { TechChip } from './../components/TechChip';
 import { ActionBtn } from './../components/ActionBtn';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
+import { useSpring } from '@react-spring/core';
+import { animated } from '@react-spring/web';
 
 const defaultValues = {
   height: 0,
@@ -45,6 +47,10 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
   useEffect(() => {
     if (isReverse) setShowDescription(false);
   }, [isReverse]);
+
+  const styles = useSpring({
+    opacity: showDescription ? 1 : 0,
+  });
 
   useEffect(() => {
     const imageDimensions = imageRef?.current?.getBoundingClientRect();
@@ -129,32 +135,40 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
               <div className="flex items-center justify-center">
                 <img className="w-36 h-36" ref={imageRef} src={afr} />
               </div>
-              <div className="text-center mt-4 font-bold text-3xl text-text">
-                <h1>A.F Raymond</h1>
-              </div>
-              <div className="text-center mt-4 text-text">
-                <p>
-                  asdsad asdkjhwe wqsdjhwqe sadjhqwe sadjkhqwe asdkjhqwe
-                  asdkjhqwe sadkjhqwe sadjkhqwe kjhsd qwejkhsad iqwue sadjkhqwe
-                  uiwqejsadh qwesadjkhqwe uasdjh
-                </p>
-              </div>
-              <div className="mt-8 flex gap-2 flex-wrap justify-center">
-                <TechChip label="HTML" />
-                <TechChip label="CSS" />
-                <TechChip label="Jquery" />
-                <TechChip label="23" />
-                <TechChip label="HTM321L" />
-                <TechChip label="CS23S" />
-              </div>
+              <animated.div style={styles}>
+                <div className="text-center mt-4 font-bold text-3xl text-text">
+                  <h1>A.F Raymond</h1>
+                </div>
+                <div className="text-center mt-4 text-text">
+                  <p>
+                    asdsad asdkjhwe wqsdjhwqe sadjhqwe sadjkhqwe asdkjhqwe
+                    asdkjhqwe sadkjhqwe sadjkhqwe kjhsd qwejkhsad iqwue
+                    sadjkhqwe uiwqejsadh qwesadjkhqwe uasdjh
+                  </p>
+                </div>
+                <div className="mt-8 flex gap-2 flex-wrap justify-center">
+                  <TechChip label="HTML" />
+                  <TechChip label="CSS" />
+                  <TechChip label="Jquery" />
+                  <TechChip label="23" />
+                  <TechChip label="HTM321L" />
+                  <TechChip label="CS23S" />
+                </div>
+              </animated.div>
             </div>
-            <div className="p-4 flex gap-7 items-center justify-center">
+            <animated.div
+              style={styles}
+              className="p-4 flex gap-7 items-center justify-center"
+            >
               <ActionBtn data="sads" type="github" />
               <ActionBtn data="sads" type="visit" />
-            </div>
+            </animated.div>
           </div>
           <div className="bg-red-50 border-r border-text-light min-h-[calc(100vh-2rem)]"></div>
-          <div className="w-full min-h-screen px-8 py-4">
+          <animated.div
+            style={styles}
+            className="w-full min-h-screen px-8 py-4"
+          >
             <div>
               <h1 className="text-2xl font-bold text-text mb-4">
                 My Responsibilities
@@ -177,7 +191,7 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
                 Sorry, no screenshots are available for this project
               </div>
             </div>
-          </div>
+          </animated.div>
         </div>
       </div>
     </div>
