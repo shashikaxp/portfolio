@@ -166,17 +166,17 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
       </animated.div>
 
       <div className="flex items-center justify-center mt-10 gap-2">
-        <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:opacity-80">
-          <BsChevronCompactLeft
-            onClick={prev}
-            className="text-2xl cursor-pointer text-text-light "
-          />
+        <div
+          onClick={prev}
+          className="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center hover:opacity-80"
+        >
+          <BsChevronCompactLeft className="text-2xl text-text-light " />
         </div>
-        <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:opacity-80">
-          <BsChevronCompactRight
-            onClick={next}
-            className="text-2xl cursor-pointer text-text-light"
-          />
+        <div
+          onClick={next}
+          className="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center hover:opacity-80"
+        >
+          <BsChevronCompactRight className="text-2xl text-text-light" />
         </div>
       </div>
     </>
