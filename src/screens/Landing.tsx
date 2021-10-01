@@ -1,11 +1,31 @@
 import { useSpring } from '@react-spring/core';
 import { animated } from '@react-spring/web';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useLoadAssets } from './../hooks/useLoadAssets';
 
 interface LandingProps {}
 
 export const Landing: React.FC<LandingProps> = ({ children }) => {
   const [projects, setProjects] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const [progress, setProgress] = useState(0);
+
+  const update = (completed: number, total: number) => {
+    const progress = Math.round((completed / total) * 100);
+    setProgress(progress);
+  };
+
+  const { loadAssets } = useLoadAssets(update);
+
+  useEffect(() => {
+    const asyncLoadAssets = async () => {
+      await loadAssets();
+      await setIsLoading(false);
+    };
+
+    asyncLoadAssets();
+  }, []);
 
   const [leftContainerStyle, leftContainerApi] = useSpring(() => ({
     transform: `translate(0px,0px)`,
@@ -30,43 +50,49 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
 
   return (
     <div>
-      {!projects && (
-        <div className="min-h-screen w-screen flex z-40 absolute overflow-x-hidden">
-          <animated.div
-            style={leftContainerStyle}
-            className=" w-1/2 flex min-h-screen items-center justify-end bg-black"
-          >
-            <div className="w-2/3 text-right pr-8  text-white text-xl font-thin">
-              <div>
-                A Software Developer with 4+ years of Software Development
-                experience on various Platforms, Passionate to build Polished,
-                Innovative and well-detailed Apps with Fluid Animations to
-                complement the Design.
-              </div>
-              <div className="mt-8 flex items-end justify-end">
-                <div
-                  className="cursor-pointer px-5 py-2 border border-white w-max self-end hover:text-black hover:bg-white"
-                  onClick={() => loadPortfolio()}
-                >
-                  Check out my portfolio
+      {isLoading ? (
+        <div>Loding {progress}</div>
+      ) : (
+        <div>
+          {!projects && (
+            <div className="min-h-screen w-screen flex z-40 absolute overflow-x-hidden">
+              <animated.div
+                style={leftContainerStyle}
+                className=" w-1/2 flex min-h-screen items-center justify-end bg-black"
+              >
+                <div className="w-2/3 text-right pr-16  text-white text-xl font-thin">
+                  <div>
+                    A Software Developer with 4+ years of Software Development
+                    experience on various Platforms, Passionate to build
+                    Polished, Innovative and well-detailed Apps with Fluid
+                    Animations to complement the Design.
+                  </div>
+                  <div className="mt-8 flex items-end justify-end">
+                    <div
+                      className="cursor-pointer px-5 py-2 border border-white w-max self-end hover:text-black hover:bg-white"
+                      onClick={() => loadPortfolio()}
+                    >
+                      Check out my portfolio
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </animated.div>
+              </animated.div>
 
-          <animated.div
-            style={rightContainerStyle}
-            className="flex-1 min-h-screen bg-white flex items-center pl-8"
-          >
-            <div className="font-bold text-5xl leading-tight pb-[30vh]">
-              Hi, I&apos;m <br />
-              Shashika Weerakkody
+              <animated.div
+                style={rightContainerStyle}
+                className="flex-1 min-h-screen bg-white flex items-center pl-16"
+              >
+                <div className="font-bold text-5xl leading-tight pb-[30vh]">
+                  Hi, I&apos;m <br />
+                  Shashika Weerakkody
+                </div>
+              </animated.div>
             </div>
-          </animated.div>
+          )}
+
+          {children}
         </div>
       )}
-
-      {children}
     </div>
   );
 };

@@ -24,7 +24,6 @@ export const AnimationContainer: React.FC<AnimationContainerProp> = ({
   }, [match]);
 
   const onPageAnimationEnd = () => {
-    console.log('onPageAnimationEnd OG');
     setShowComponent(false);
     setStartPageEndAnimation(false);
   };

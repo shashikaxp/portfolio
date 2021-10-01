@@ -36,9 +36,3 @@ export const App: React.FC = () => {
     </Router>
   );
 };
-
-{
-  /* <Route path="/experience">
-  <Experience />
-</Route>; */
-}
