@@ -80,19 +80,19 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
 
       <div>
         {!projects && (
-          <div className="min-h-screen w-screen flex z-40 absolute overflow-x-hidden">
+          <div className="min-h-screen w-screen flex flex-col-reverse z-40 absolute overflow-x-hidden md:flex-row">
             <animated.div
               style={leftContainerStyle}
-              className=" w-1/2 flex min-h-screen items-center justify-end bg-black"
+              className="w-screen h-1/2 md:w-1/2 flex flex-1 flex-shrink-0 md:min-h-screen items-center justify-end bg-black"
             >
-              <div className="w-2/3 text-right pr-16  text-white text-xl font-thin">
+              <div className="md:w-2/3 text-center md:text-right px-8 md:pr-16  text-white text-xl font-thin">
                 <div>
                   A Software Developer with 4+ years of Software Development
                   experience on various Platforms, Passionate to build Polished,
                   Innovative and well-detailed Apps with Fluid Animations to
                   complement the Design.
                 </div>
-                <div className="mt-8 flex items-end justify-end">
+                <div className="mt-8 flex items-center justify-center md:items-end md:justify-end">
                   <div
                     className="cursor-pointer px-5 py-2 border border-white w-max self-end hover:text-black hover:bg-white"
                     onClick={() => loadPortfolio()}
@@ -105,9 +105,9 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
 
             <animated.div
               style={rightContainerStyle}
-              className="flex-1 min-h-screen bg-white flex items-center pl-16"
+              className="flex-1 h-1/2 md:min-h-screen bg-white flex items-center pl-16"
             >
-              <div className="font-bold text-5xl leading-tight pb-[30vh]">
+              <div className="font-bold text-5xl leading-tight md:pb-[30vh]">
                 Hi, I&apos;m <br />
                 Shashika Weerakkody
               </div>
