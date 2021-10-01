@@ -10,6 +10,10 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const [progress, setProgress] = useState(0);
+  const loaderHeightStyle = useSpring({ height: progress.toString() + 'vh' });
+  const loaderColorStyle = useSpring({
+    color: progress > 50 ? 'white' : 'black',
+  });
 
   const update = (completed: number, total: number) => {
     const progress = Math.round((completed / total) * 100);
@@ -21,7 +25,9 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
   useEffect(() => {
     const asyncLoadAssets = async () => {
       await loadAssets();
-      await setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
     };
 
     asyncLoadAssets();
@@ -51,7 +57,15 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
   return (
     <div>
       {isLoading ? (
-        <div>Loding {progress}</div>
+        <div className="min-h-screen w-screen flex items-center justify-center font-bold text-8xl">
+          <animated.div
+            style={loaderHeightStyle}
+            className="bg-black h-screen w-screen absolute bottom-0"
+          ></animated.div>
+          <animated.div className="z-[2]" style={loaderColorStyle}>
+            {progress}%
+          </animated.div>
+        </div>
       ) : (
         <div>
           {!projects && (
