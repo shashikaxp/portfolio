@@ -14,6 +14,15 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
   const loaderColorStyle = useSpring({
     color: progress > 50 ? 'white' : 'black',
   });
+  const loaderContainerStyle = useSpring({
+    to: async (next, cancel) => {
+      await next({ opacity: isLoading ? 1 : 0 });
+      await next({ display: isLoading ? 'flex' : 'none' });
+    },
+    config: {
+      duration: 500,
+    },
+  });
 
   const update = (completed: number, total: number) => {
     const progress = Math.round((completed / total) * 100);
@@ -56,57 +65,58 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
 
   return (
     <div>
-      {isLoading ? (
-        <div className="min-h-screen w-screen flex items-center justify-center font-bold text-8xl">
-          <animated.div
-            style={loaderHeightStyle}
-            className="bg-black h-screen w-screen absolute bottom-0"
-          ></animated.div>
-          <animated.div className="z-[2]" style={loaderColorStyle}>
-            {progress}%
-          </animated.div>
-        </div>
-      ) : (
-        <div>
-          {!projects && (
-            <div className="min-h-screen w-screen flex z-40 absolute overflow-x-hidden">
-              <animated.div
-                style={leftContainerStyle}
-                className=" w-1/2 flex min-h-screen items-center justify-end bg-black"
-              >
-                <div className="w-2/3 text-right pr-16  text-white text-xl font-thin">
-                  <div>
-                    A Software Developer with 4+ years of Software Development
-                    experience on various Platforms, Passionate to build
-                    Polished, Innovative and well-detailed Apps with Fluid
-                    Animations to complement the Design.
-                  </div>
-                  <div className="mt-8 flex items-end justify-end">
-                    <div
-                      className="cursor-pointer px-5 py-2 border border-white w-max self-end hover:text-black hover:bg-white"
-                      onClick={() => loadPortfolio()}
-                    >
-                      Check out my portfolio
-                    </div>
+      <animated.div
+        style={loaderContainerStyle}
+        className="z-[50] min-h-screen w-screen flex items-center justify-center font-bold text-8xl absolute overflow-x-hidden bg-white"
+      >
+        <animated.div
+          style={loaderHeightStyle}
+          className="bg-black h-screen w-screen absolute bottom-0"
+        ></animated.div>
+        <animated.div className="z-[2]" style={loaderColorStyle}>
+          {progress}%
+        </animated.div>
+      </animated.div>
+
+      <div>
+        {!projects && (
+          <div className="min-h-screen w-screen flex z-40 absolute overflow-x-hidden">
+            <animated.div
+              style={leftContainerStyle}
+              className=" w-1/2 flex min-h-screen items-center justify-end bg-black"
+            >
+              <div className="w-2/3 text-right pr-16  text-white text-xl font-thin">
+                <div>
+                  A Software Developer with 4+ years of Software Development
+                  experience on various Platforms, Passionate to build Polished,
+                  Innovative and well-detailed Apps with Fluid Animations to
+                  complement the Design.
+                </div>
+                <div className="mt-8 flex items-end justify-end">
+                  <div
+                    className="cursor-pointer px-5 py-2 border border-white w-max self-end hover:text-black hover:bg-white"
+                    onClick={() => loadPortfolio()}
+                  >
+                    Check out my portfolio
                   </div>
                 </div>
-              </animated.div>
+              </div>
+            </animated.div>
 
-              <animated.div
-                style={rightContainerStyle}
-                className="flex-1 min-h-screen bg-white flex items-center pl-16"
-              >
-                <div className="font-bold text-5xl leading-tight pb-[30vh]">
-                  Hi, I&apos;m <br />
-                  Shashika Weerakkody
-                </div>
-              </animated.div>
-            </div>
-          )}
+            <animated.div
+              style={rightContainerStyle}
+              className="flex-1 min-h-screen bg-white flex items-center pl-16"
+            >
+              <div className="font-bold text-5xl leading-tight pb-[30vh]">
+                Hi, I&apos;m <br />
+                Shashika Weerakkody
+              </div>
+            </animated.div>
+          </div>
+        )}
 
-          {children}
-        </div>
-      )}
+        {children}
+      </div>
     </div>
   );
 };
