@@ -130,7 +130,8 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
 
         <div
           className={
-            `flex items-center w-screen flex-row bg-white ` + getClasses()
+            `flex items-center min-h-screen w-screen flex-col md:flex-row bg-white ` +
+            getClasses()
           }
         >
           <div className="absolute right-3 top-3">
@@ -139,7 +140,7 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
               className="cursor-pointer w-10 h-10 font-thin hover:text-red-500"
             />
           </div>
-          <div className="flex-shrink-0 w-1/4 min-h-screen p-4 flex flex-col justify-between">
+          <div className="md:flex-shrink-0 w-screen md:w-1/4 md:min-h-screen p-4 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-center">
                 <img className="w-36 h-36" ref={imageRef} src={projectImage} />
@@ -160,7 +161,7 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
             </div>
             <animated.div
               style={styles}
-              className="p-4 flex gap-7 items-center justify-center"
+              className="mt-4 p-4 flex gap-7 items-center justify-center md:mt-0"
             >
               {projectData?.projectDetails.actionButtons.map(
                 ({ data, type }) => {
@@ -171,11 +172,11 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
           </div>
           <animated.div
             style={styles}
-            className="bg-red-50 border-r border-text-light min-h-[calc(100vh-2rem)]"
+            className="w-[calc(100vw-2rem)] border-t border-text-light md:border-r  md:min-h-[calc(100vh-2rem)] md:w-0"
           ></animated.div>
           <animated.div
             style={styles}
-            className="w-full min-h-screen px-8 py-4"
+            className="w-full min-h-full md:min-h-screen px-8 py-8 md:py-4"
           >
             <div>
               <h1 className="text-2xl font-bold text-text mb-4">
