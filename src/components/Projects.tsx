@@ -5,6 +5,8 @@ import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { useSprings, useSpring, animated } from 'react-spring';
 import { Project } from './../types/constants';
 
+import { useMediaQuery } from 'react-responsive';
+
 interface ProjectsProps {
   projects: Project[];
 }
@@ -12,6 +14,7 @@ interface ProjectsProps {
 export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const history = useHistory();
+  const isMD = useMediaQuery({ query: '(min-width: 768px)' });
 
   const styles = useSpring({
     from: { opacity: 0 },
@@ -43,8 +46,8 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
     opacity: 1,
     x: 0,
     y: 0,
-    width: '300px',
-    height: '550px',
+    width: isMD ? '300px' : '150px',
+    height: isMD ? '550px' : '200px',
     scale: 1,
   }));
 
@@ -107,17 +110,17 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 
   const getHeight = (index: number) => {
     if (index <= currentIndex) {
-      return '550px';
+      return isMD ? '550px' : '200px';
     } else {
-      return '500px';
+      return isMD ? '500px' : '180px';
     }
   };
 
   const getWidth = (index: number) => {
     if (index <= currentIndex) {
-      return '300px';
+      return isMD ? '300px' : '150px';
     } else {
-      return '275px';
+      return isMD ? '275px' : '125px';
     }
   };
 
@@ -151,7 +154,9 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                     <div className="font-bold text-2xl mb-4">
                       {projects[i].name}
                     </div>
-                    <div className="mb-4">{projects[i].description}</div>
+                    <div className="mb-4 hidden md:block">
+                      {projects[i].description}
+                    </div>
                     <div className="flex flex-wrap items-center justify-center gap-x-2 font-bold">
                       {projects[i].technologies.map((t) => {
                         return <div key={t}>{t}</div>;

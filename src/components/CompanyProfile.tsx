@@ -32,14 +32,14 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
   return (
     <animated.div
       style={styles}
-      className="flex items-center justify-center flex-col"
+      className="flex items-center justify-center flex-col "
     >
       <div className="text-white font-primary text-center relative md:text-left ">
-        <div className="absolute -top-24 h-24">
+        <div className="h-12 mb-4 text-center flex flex-row justify-center  md:absolute md:-top-24 md:h-24 ">
           {id !== 0 && (
             <BsChevronCompactUp
               onClick={() => changeCompany(id - 1)}
-              className="text-gray-200 text-8xl cursor-pointer"
+              className="text-gray-200 text-6xl md:text-8xl cursor-pointer"
             />
           )}
         </div>
@@ -47,11 +47,11 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
         <div className="text-2xl mt-4 font-se">{position}</div>
         <div className="text-xl mt-4 font-light">{time}</div>
         <p className="font-thin mt-2">{description}</p>
-        <div className="absolute -bottom-24 h-24">
+        <div className="h-12 mt-4 text-center flex flex-row justify-center  md:absolute md:-bottom-24 md:h-24 ">
           {id !== 2 && (
             <BsChevronCompactDown
               onClick={() => changeCompany(id + 1)}
-              className="text-gray-200 text-8xl cursor-pointer"
+              className="text-gray-200 text-6xl md:text-8xl cursor-pointer"
             />
           )}
         </div>
