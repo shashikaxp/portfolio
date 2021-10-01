@@ -21,7 +21,7 @@ export const Experience: React.FC = () => {
   });
 
   return (
-    <div className="overflow-hidden h-screen w-full select-none fill-current overscroll-y-contain absolute top-0 left-0 z-[1]">
+    <div className="overflow-hidden h-screen max-h-screen w-full select-none fill-current overscroll-y-contain absolute top-0 left-0 z-[1]">
       {transitions((style, i) => (
         <animated.div
           className="min-h-screen w-screen bg-cover absolute top-0 left-0 items-center justify-between flex flex-col md:flex-row"

@@ -80,10 +80,10 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
 
       <div>
         {!projects && (
-          <div className="min-h-screen w-screen flex flex-col-reverse z-40 absolute overflow-x-hidden md:flex-row">
+          <div className="h-screen max-h-screen w-screen flex flex-col-reverse z-40 absolute overflow-x-hidden md:flex-row">
             <animated.div
               style={leftContainerStyle}
-              className="w-screen h-1/2 md:w-1/2 flex flex-1 flex-shrink-0 md:min-h-screen items-center justify-end bg-black"
+              className="w-screen flex-1 md:w-1/2 flex flex-shrink-0 md:min-h-screen items-center justify-end bg-black"
             >
               <div className="md:w-2/3 text-center md:text-right px-8 md:pr-16  text-white text-xl font-thin">
                 <div>
@@ -105,7 +105,7 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
 
             <animated.div
               style={rightContainerStyle}
-              className="flex-1 h-1/2 md:min-h-screen bg-white flex items-center pl-16"
+              className="flex-1 bg-white flex items-center pl-16 md:min-h-screen"
             >
               <div className="font-bold text-5xl leading-tight md:pb-[30vh]">
                 Hi, I&apos;m <br />
