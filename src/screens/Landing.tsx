@@ -1,6 +1,9 @@
 import { useSpring } from '@react-spring/core';
 import { animated } from '@react-spring/web';
 import React, { useEffect, useState } from 'react';
+
+import Div100vh from 'react-div-100vh';
+
 import { useLoadAssets } from './../hooks/useLoadAssets';
 
 interface LandingProps {}
@@ -64,14 +67,14 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
   };
 
   return (
-    <div>
+    <Div100vh>
       <animated.div
         style={loaderContainerStyle}
-        className="z-[50] min-h-screen w-screen flex items-center justify-center font-bold text-8xl absolute overflow-x-hidden bg-white"
+        className="z-[50] h-full w-screen flex items-center justify-center font-bold text-8xl absolute overflow-x-hidden bg-white"
       >
         <animated.div
           style={loaderHeightStyle}
-          className="bg-black h-screen w-screen absolute bottom-0"
+          className={`bg-black h-full w-screen absolute bottom-0 `}
         ></animated.div>
         <animated.div className="z-[2]" style={loaderColorStyle}>
           {progress}%
@@ -80,7 +83,7 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
 
       <div>
         {!projects && (
-          <div className="h-screen max-h-screen w-screen flex flex-col-reverse z-40 absolute overflow-x-hidden md:flex-row">
+          <div className="h-full w-screen flex flex-col-reverse z-40 absolute overflow-x-hidden md:flex-row">
             <animated.div
               style={leftContainerStyle}
               className="w-screen flex-1 md:w-1/2 flex flex-shrink-0 md:min-h-screen items-center justify-end bg-black"
@@ -117,6 +120,6 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
 
         {children}
       </div>
-    </div>
+    </Div100vh>
   );
 };

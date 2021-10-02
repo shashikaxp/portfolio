@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Div100vh from 'react-div-100vh';
 
 import { CompanyProfile } from '../components/CompanyProfile';
 import { Projects } from '../components/Projects';
@@ -21,16 +22,16 @@ export const Experience: React.FC = () => {
   });
 
   return (
-    <div className="overflow-hidden h-screen max-h-screen w-full select-none fill-current overscroll-y-contain absolute top-0 left-0 z-[1]">
+    <Div100vh className="overflow-hidden h-full w-full select-none fill-current overscroll-y-contain absolute top-0 left-0 z-[1]">
       {transitions((style, i) => (
         <animated.div
-          className="min-h-screen w-screen bg-cover absolute top-0 left-0 items-center justify-between flex flex-col md:flex-row"
+          className="h-full w-screen bg-cover absolute top-0 left-0 items-center justify-between flex flex-col md:flex-row"
           style={{
             ...style,
             backgroundImage: `url(${CompanyData[i].bg})`,
           }}
         >
-          <div className="md:min-h-screen p-4 md:p-12 md:ml-20 md:w-1/3 flex items-center justify-center">
+          <div className="md:min-h-full p-4 md:p-12 md:ml-20 md:w-1/3 flex items-center justify-center">
             <CompanyProfile {...CompanyData[i]} changeCompany={changeCompany} />
           </div>
           <div className="w-full md:ml-20 mt-4 md:w-2/4 md:pl-4 md:px-0">
@@ -38,6 +39,6 @@ export const Experience: React.FC = () => {
           </div>
         </animated.div>
       ))}
-    </div>
+    </Div100vh>
   );
 };
