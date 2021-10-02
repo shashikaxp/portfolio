@@ -34,7 +34,7 @@ export const Experience: React.FC = () => {
           <div className="md:min-h-full p-4 md:p-12 md:ml-20 md:w-1/3 flex items-center justify-center">
             <CompanyProfile {...CompanyData[i]} changeCompany={changeCompany} />
           </div>
-          <div className="w-full md:ml-20 mt-4 md:w-2/4 md:pl-4 md:px-0">
+          <div className="w-full pb-4 md:ml-20 mt-4 md:w-2/4 md:pl-4 md:px-0 md:pb-0">
             <Projects projects={CompanyData[i].projects} />
           </div>
         </animated.div>

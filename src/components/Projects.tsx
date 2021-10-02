@@ -1,4 +1,4 @@
-import React, { MouseEvent, useEffect, useState } from 'react';
+import React, { MouseEvent, useEffect, useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
@@ -15,6 +15,15 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const history = useHistory();
   const isMD = useMediaQuery({ query: '(min-width: 768px)' });
+  const projectContainerRef = useRef<HTMLImageElement>(null);
+
+  const [projectCardWidth, setProjectCardWidth] = useState(0);
+
+  useEffect(() => {
+    const cardDomData =
+      projectContainerRef.current?.firstElementChild?.getBoundingClientRect();
+    setProjectCardWidth(cardDomData?.width || 0);
+  }, []);
 
   const styles = useSpring({
     from: { opacity: 0 },
@@ -47,7 +56,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
     x: 0,
     y: 0,
     width: isMD ? '300px' : '150px',
-    height: isMD ? '550px' : '200px',
+    height: isMD ? '550px' : '230px',
     scale: 1,
   }));
 
@@ -86,7 +95,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
     if (index == 0) {
       x = 0;
     } else {
-      x = index < currentIndex ? null : currentIndex * -316;
+      x = index < currentIndex ? null : currentIndex * -(projectCardWidth + 16);
     }
     return x;
   };
@@ -110,9 +119,9 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 
   const getHeight = (index: number) => {
     if (index <= currentIndex) {
-      return isMD ? '550px' : '200px';
+      return isMD ? '550px' : '230px';
     } else {
-      return isMD ? '500px' : '180px';
+      return isMD ? '500px' : '210px';
     }
   };
 
@@ -124,11 +133,20 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
     }
   };
 
+  const getTranslateStyle = () => {
+    if (isMD) {
+      return `none`;
+    } else {
+      return `translateX(calc((100vw/2) - ${projectCardWidth / 2}px))`;
+    }
+  };
+
   return (
     <>
       <animated.div
-        style={styles}
-        className="flex space-x-4 relative overflow-hidden items-center text-text"
+        ref={projectContainerRef}
+        style={{ ...styles, transform: getTranslateStyle() }}
+        className={`flex space-x-4 relative overflow-hidden items-center text-text`}
       >
         {springs.map((styles, i) => {
           return (
@@ -142,7 +160,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                 onClick={(e) => onClickContainer(e, projects[i].id)}
               >
                 <div className="h-full" id="project-container">
-                  <div className="p-4">
+                  <div className="p-2 md:p-4">
                     <img
                       id="project-image"
                       src={projects[i].image}
@@ -151,7 +169,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                     />
                   </div>
                   <div className="flex flex-col items-center px-4">
-                    <div className="font-bold text-2xl mb-4">
+                    <div className="font-bold mb-2 md:text-2xl md:mb-4">
                       {projects[i].name}
                     </div>
                     <div className="mb-4 hidden md:block">
@@ -159,7 +177,11 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                     </div>
                     <div className="flex flex-wrap items-center justify-center gap-x-2 font-bold">
                       {projects[i].technologies.map((t) => {
-                        return <div key={t}>{t}</div>;
+                        return (
+                          <div className="text-sm text-text-light" key={t}>
+                            {t}
+                          </div>
+                        );
                       })}
                     </div>
                   </div>
