@@ -83,12 +83,12 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
 
       <div>
         {!projects && (
-          <div className="h-full w-screen flex flex-col-reverse z-40 absolute overflow-x-hidden md:flex-row">
+          <div className="h-full w-full flex flex-col-reverse z-40 absolute overflow-x-hidden md:flex-row">
             <animated.div
               style={leftContainerStyle}
-              className="w-screen flex-1 md:w-1/2 flex flex-shrink-0 md:min-h-screen items-center justify-end bg-black"
+              className="flex items-center justify-end bg-black h-1/2  md:min-h-screen md:w-1/2"
             >
-              <div className="md:w-2/3 text-center md:text-right px-8 md:pr-16  text-white text-xl font-thin">
+              <div className="text-center px-12 text-white font-thin md:text-xl md:w-2/3 md:pr-16 md:text-right">
                 <div>
                   A Software Developer with 4+ years of Software Development
                   experience on various Platforms, Passionate to build Polished,
@@ -108,9 +108,9 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
 
             <animated.div
               style={rightContainerStyle}
-              className="flex-1 bg-white flex items-center pl-16 md:min-h-screen"
+              className=" bg-white flex h-1/2 items-center  md:min-h-full md:w-1/2"
             >
-              <div className="font-bold text-5xl leading-tight md:pb-[30vh]">
+              <div className="font-bold text-4xl px-16 md:text-5xl leading-tight md:pb-[30vh]">
                 Hi, I&apos;m <br />
                 Shashika Weerakkody
               </div>

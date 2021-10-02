@@ -142,8 +142,8 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   };
 
   return (
-    <div className="flex h-full items-center pb-4 md:pb-0">
-      <div className="overflow-hidden w-full">
+    <div className="flex h-full w-full items-center pb-4 md:pb-0">
+      <div className="overflow-hidden">
         <animated.div
           ref={projectContainerRef}
           style={{ ...styles, transform: getTranslateStyle() }}
