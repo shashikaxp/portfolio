@@ -31,10 +31,10 @@ export const Experience: React.FC = () => {
             backgroundImage: `url(${CompanyData[i].bg})`,
           }}
         >
-          <div className="md:min-h-full p-4 md:p-12 md:ml-20 md:w-1/3 flex items-center justify-center">
+          <div className="flex h-1/2 flex-grow-0 items-center justify-center p-4 md:p-12 md:ml-20 md:w-1/3 md:min-h-full ">
             <CompanyProfile {...CompanyData[i]} changeCompany={changeCompany} />
           </div>
-          <div className="w-full pb-4 md:ml-20 mt-4 md:w-2/4 md:pl-4 md:px-0 md:pb-0">
+          <div className="w-full h-1/2 flex-1 md:ml-20 md:w-2/4 md:pl-4 md:px-0">
             <Projects projects={CompanyData[i].projects} />
           </div>
         </animated.div>

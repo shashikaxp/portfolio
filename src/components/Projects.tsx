@@ -142,70 +142,72 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   };
 
   return (
-    <>
-      <animated.div
-        ref={projectContainerRef}
-        style={{ ...styles, transform: getTranslateStyle() }}
-        className={`flex space-x-4 relative overflow-hidden items-center text-text`}
-      >
-        {springs.map((styles, i) => {
-          return (
-            <animated.div
-              style={styles}
-              key={projects[i].id}
-              className="bg-white flex-shrink-0 rounded-2xl"
-            >
-              <Link
-                to={`/projects/${projects[i].id}`}
-                onClick={(e) => onClickContainer(e, projects[i].id)}
+    <div className="flex h-full items-center pb-4 md:pb-0">
+      <div className="overflow-hidden w-full">
+        <animated.div
+          ref={projectContainerRef}
+          style={{ ...styles, transform: getTranslateStyle() }}
+          className={`flex space-x-4 relative overflow-hidden items-center text-text`}
+        >
+          {springs.map((styles, i) => {
+            return (
+              <animated.div
+                style={styles}
+                key={projects[i].id}
+                className="bg-white flex-shrink-0 rounded-2xl"
               >
-                <div className="h-full" id="project-container">
-                  <div className="p-2 md:p-4">
-                    <img
-                      id="project-image"
-                      src={projects[i].image}
-                      className="rounded-2xl"
-                      alt="project-image"
-                    />
+                <Link
+                  to={`/projects/${projects[i].id}`}
+                  onClick={(e) => onClickContainer(e, projects[i].id)}
+                >
+                  <div className="h-full" id="project-container">
+                    <div className="p-2 md:p-4">
+                      <img
+                        id="project-image"
+                        src={projects[i].image}
+                        className="rounded-2xl"
+                        alt="project-image"
+                      />
+                    </div>
+                    <div className="flex flex-col items-center px-4">
+                      <div className="font-bold mb-2 md:text-2xl md:mb-4">
+                        {projects[i].name}
+                      </div>
+                      <div className="mb-4 hidden md:block">
+                        {projects[i].description}
+                      </div>
+                      <div className="flex flex-wrap items-center justify-center gap-x-2 font-bold">
+                        {projects[i].technologies.map((t) => {
+                          return (
+                            <div className="text-sm text-text-light" key={t}>
+                              {t}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex flex-col items-center px-4">
-                    <div className="font-bold mb-2 md:text-2xl md:mb-4">
-                      {projects[i].name}
-                    </div>
-                    <div className="mb-4 hidden md:block">
-                      {projects[i].description}
-                    </div>
-                    <div className="flex flex-wrap items-center justify-center gap-x-2 font-bold">
-                      {projects[i].technologies.map((t) => {
-                        return (
-                          <div className="text-sm text-text-light" key={t}>
-                            {t}
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </animated.div>
-          );
-        })}
-      </animated.div>
+                </Link>
+              </animated.div>
+            );
+          })}
+        </animated.div>
 
-      <div className="flex items-center justify-center mt-10 gap-2">
-        <div
-          onClick={prev}
-          className="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center hover:opacity-80"
-        >
-          <BsChevronCompactLeft className="text-2xl text-text-light " />
-        </div>
-        <div
-          onClick={next}
-          className="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center hover:opacity-80"
-        >
-          <BsChevronCompactRight className="text-2xl text-text-light" />
+        <div className="flex items-center justify-center mt-6 gap-2 md:mt-10">
+          <div
+            onClick={prev}
+            className="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center hover:opacity-80"
+          >
+            <BsChevronCompactLeft className="text-2xl text-text-light " />
+          </div>
+          <div
+            onClick={next}
+            className="w-10 h-10 cursor-pointer bg-white rounded-full flex items-center justify-center hover:opacity-80"
+          >
+            <BsChevronCompactRight className="text-2xl text-text-light" />
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

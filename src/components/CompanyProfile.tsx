@@ -32,28 +32,28 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
   return (
     <animated.div
       style={styles}
-      className="flex items-center justify-center flex-col "
+      className="flex items-center justify-center flex-col"
     >
       <div className="text-white font-primary text-center relative md:text-left ">
-        <div className="h-12 text-center flex flex-row justify-center md:absolute md:-top-24 md:h-24 md:mt-4">
+        <div className="h-8 mb-2 text-center flex flex-row justify-center md:absolute md:-top-24 md:h-24 md:mt-4">
           {id !== 0 && (
             <BsChevronCompactUp
               onClick={() => changeCompany(id - 1)}
-              className="text-gray-200 text-6xl md:text-8xl cursor-pointer"
+              className="text-gray-200 text-4xl md:text-8xl cursor-pointer"
             />
           )}
         </div>
         <div className="text-3xl md:text-4xl ">{name}</div>
-        <div className="text-xl mt-2 md:text-2xl md:mt-4 ">{position}</div>
+        <div className="text-xl md:text-2xl md:mt-4 ">{position}</div>
         <div className="text-lg mt-2 font-light md:mt-4 md:text-xl md:font-normal">
           {time}
         </div>
         <p className="font-thin mt-2">{description}</p>
-        <div className="h-12 text-center flex flex-row justify-center  md:absolute md:-bottom-24 md:h-24 md:mt-4">
+        <div className="h-8 mt-2 text-center flex flex-row justify-center  md:absolute md:-bottom-24 md:h-24 md:mt-4">
           {id !== 2 && (
             <BsChevronCompactDown
               onClick={() => changeCompany(id + 1)}
-              className="text-gray-200 text-6xl md:text-8xl cursor-pointer"
+              className="text-gray-200 text-4xl md:text-8xl cursor-pointer"
             />
           )}
         </div>

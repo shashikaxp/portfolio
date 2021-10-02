@@ -38,6 +38,18 @@ const kinzaProjects: Project[] = [
   },
 ];
 
+const epigroProject: Project[] = [
+  {
+    id: 'afr',
+    name: 'AF Raymond',
+    image: afraymond,
+    description:
+      "It is a long established fact that opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page ed",
+    involvement: 'Heavy',
+    technologies: ['HTML', 'CSS', 'Jquery'],
+  },
+];
+
 export const CompanyData: CompanyDataType[] = [
   {
     id: 0,
@@ -57,7 +69,7 @@ export const CompanyData: CompanyDataType[] = [
     description:
       "It is a long established fact that opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page ed",
     bg: epigroBg,
-    projects: [],
+    projects: epigroProject,
   },
   {
     id: 2,
