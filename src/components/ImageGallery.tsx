@@ -15,9 +15,11 @@ interface ImageGalleryProps {
 export const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
   if (!images) return null;
 
+  //have to add empty onclick for show the mouse pointer :S
+  //need to check other possibilities
   return (
     <SRLWrapper>
-      <Gallery photos={images} />
+      <Gallery photos={images} onClick={() => {}} />
     </SRLWrapper>
   );
 };

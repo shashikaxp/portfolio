@@ -6,7 +6,7 @@ import sr from './../assets/img/projects/sr.png';
 
 import { Project, CompanyData as CompanyDataType } from './../types/constants';
 
-// Use three main technologies here
+// Use two/three main technologies here
 
 const kinzaProjects: Project[] = [
   {
@@ -25,7 +25,7 @@ const kinzaProjects: Project[] = [
     description:
       "It is a long established fact that opposed to using 'Conike readable English. Many desktop publishing packages and web page ed",
     involvement: 'Heavy',
-    technologies: ['Wordpress', 'PHP', 'HTML'],
+    technologies: ['Wordpress', 'PHP'],
   },
   {
     id: 'afr3',
@@ -34,7 +34,7 @@ const kinzaProjects: Project[] = [
     description:
       'making it look like readable English. Many desktop publib page ed',
     involvement: 'Heavy',
-    technologies: ['HTML3', 'CSS3', 'Jquery3'],
+    technologies: ['HTML3', 'Jquery3'],
   },
 ];
 
