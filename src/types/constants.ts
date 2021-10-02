@@ -24,6 +24,12 @@ interface ActionButton {
   data: string;
 }
 
+interface ProjectScreenshot {
+  src: string;
+  width: number;
+  height: number;
+}
+
 export interface ProjectDetails {
   id: string;
   projectName: string;
@@ -32,7 +38,7 @@ export interface ProjectDetails {
   projectDetails: {
     technologies: string[];
     contribution: string[];
-    screenShots: string[];
+    screenShots: ProjectScreenshot[];
     actionButtons: ActionButton[];
   };
 }

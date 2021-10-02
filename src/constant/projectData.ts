@@ -16,7 +16,10 @@ export const ProjectData: ProjectDetails[] = [
           data: 'afr.com',
         },
       ],
-      screenShots: [],
+      screenShots: [
+        { src: afr, height: 1, width: 1 },
+        { src: sr, height: 1, width: 1 },
+      ],
       technologies: ['HTML', 'CSS', 'Jquery'],
       contribution: [
         'ASdsadsad asd asde asdqwe sadqwesad sdqwe asdqwe asdqwe',
