@@ -15,8 +15,6 @@ export const useGetProject = (
     if (project) {
       projectDetails = project;
       if (project) break;
-    } else {
-      throw Error('Invalid project id');
     }
   }
 
