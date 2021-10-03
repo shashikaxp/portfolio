@@ -2,16 +2,17 @@ import { animated, useSpring } from '@react-spring/web';
 import React from 'react';
 
 import { BsChevronCompactUp, BsChevronCompactDown } from 'react-icons/bs';
+import { CompanyData } from './../types/constants';
 
-interface CompanyProfileProps {
-  id: number;
-  name: string;
-  position: string;
-  time: string;
-  description: string;
-  className?: String;
+type UpdatedCompanyData = Pick<
+  CompanyData,
+  'description' | 'id' | 'name' | 'position' | 'time'
+>;
+
+type CompanyProfileProps = UpdatedCompanyData & {
+  numberOfCompanies: number;
   changeCompany: (i: number) => void;
-}
+};
 
 export const CompanyProfile: React.FC<CompanyProfileProps> = ({
   id,
@@ -20,6 +21,7 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
   time,
   description,
   changeCompany,
+  numberOfCompanies,
 }) => {
   const styles = useSpring({
     from: { opacity: 0 },
@@ -50,7 +52,7 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
         </div>
         <p className="font-thin mt-2">{description}</p>
         <div className="h-8 mt-2 text-center flex flex-row justify-center  md:absolute md:-bottom-24 md:h-24 md:mt-4">
-          {id !== 2 && (
+          {id !== numberOfCompanies - 1 && (
             <BsChevronCompactDown
               onClick={() => changeCompany(id + 1)}
               className="text-gray-200 text-4xl md:text-8xl cursor-pointer"

@@ -3,12 +3,12 @@ import { Link, useHistory } from 'react-router-dom';
 
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { useSprings, useSpring, animated } from 'react-spring';
-import { Project } from './../types/constants';
+import { ProjectDetails } from './../types/constants';
 
 import { useMediaQuery } from 'react-responsive';
 
 interface ProjectsProps {
-  projects: Project[];
+  projects: ProjectDetails[];
 }
 
 export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
@@ -167,7 +167,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                     <div className="p-2 flex flex-col items-center justify-center md:p-4">
                       <img
                         id="project-image"
-                        src={projects[i].image}
+                        src={projects[i].img}
                         className="rounded-2xl"
                         alt="project-image"
                       />
@@ -175,12 +175,12 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                         {projects[i].name}
                       </div>
                       <div className="mb-4 hidden md:block">
-                        {projects[i].description}
+                        {projects[i].descriptionShort}
                       </div>
                     </div>
                     <div className="flex flex-col items-center pb-4 md:pb-8">
                       <div className="flex flex-wrap items-center justify-center gap-1 font-bold">
-                        {projects[i].technologies.map((t) => {
+                        {projects[i].technologies.slice(0, 2).map((t) => {
                           return (
                             <div
                               className="text-xs text-text-light rounded-full border px-3 border-text-light md:text-base"

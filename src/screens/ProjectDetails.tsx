@@ -51,7 +51,7 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
 
   useEffect(() => {
     if (projectData) {
-      setProjectImage(projectData.projectImg || '');
+      setProjectImage(projectData.img || '');
     }
   }, [projectData]);
 
@@ -149,13 +149,13 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
               </div>
               <animated.div style={styles}>
                 <div className="text-center mt-4 font-bold text-3xl text-text">
-                  <h1>{projectData?.projectName}</h1>
+                  <h1>{projectData?.name}</h1>
                 </div>
                 <div className="text-center mt-4 text-text">
-                  <p>{projectData?.clientDescription}</p>
+                  <p>{projectData?.descriptionFull}</p>
                 </div>
                 <div className="mt-8 flex gap-2 flex-wrap justify-center">
-                  {projectData?.projectDetails.technologies.map((tech) => {
+                  {projectData?.technologies.map((tech) => {
                     return <TechChip key={tech} label={tech} />;
                   })}
                 </div>
@@ -165,11 +165,9 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
               style={styles}
               className="mt-4 p-4 flex gap-7 items-center justify-center md:mt-0"
             >
-              {projectData?.projectDetails.actionButtons.map(
-                ({ data, type }) => {
-                  return <ActionBtn key={type} data={data} type={type} />;
-                }
-              )}
+              {projectData?.actionButtons.map(({ data, type }) => {
+                return <ActionBtn key={type} data={data} type={type} />;
+              })}
             </animated.div>
           </div>
           <animated.div
@@ -187,7 +185,7 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
                   My Contribution
                 </h1>
                 <ul className="list-disc list-inside text-text-light">
-                  {projectData?.projectDetails.contribution.map((res) => {
+                  {projectData?.contribution.map((res) => {
                     return <li key={res}>{res}</li>;
                   })}
                 </ul>
@@ -197,14 +195,12 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
                   Screenshots
                 </h1>
                 <div className="text-text-light">
-                  {projectData?.projectDetails.screenShots.length === 0 ? (
+                  {projectData?.screenShots.length === 0 ? (
                     <div>
                       Sorry, no screenshots are available for this project
                     </div>
                   ) : (
-                    <ImageGallery
-                      images={projectData?.projectDetails.screenShots}
-                    />
+                    <ImageGallery images={projectData?.screenShots} />
                   )}
                 </div>
               </div>

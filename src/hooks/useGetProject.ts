@@ -1,8 +1,24 @@
-import find from 'lodash/find';
+import { find } from 'lodash';
+import { ProjectDetails } from './../types/constants';
 
-import { ProjectData } from './../constant/projectData';
+import { CompanyData } from './../constant/companyData';
 
-export const useGetProject = (projectId?: string) => {
+export const useGetProject = (
+  projectId?: string
+): ProjectDetails | undefined => {
   if (!projectId) return undefined;
-  return find(ProjectData, { id: projectId });
+
+  let projectDetails: ProjectDetails | undefined;
+
+  for (let company of CompanyData) {
+    const project = find(company.projects, { id: projectId });
+    if (project) {
+      projectDetails = project;
+      if (project) break;
+    } else {
+      throw Error('Invalid project id');
+    }
+  }
+
+  return projectDetails;
 };
