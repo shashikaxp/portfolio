@@ -45,6 +45,8 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
   const { imageRect = null, containerRect = null } =
     location && location.state ? location.state : {};
 
+  const [hasValidPositions, setHasValidPositions] = useState(true);
+
   const [listingPageImageRect] = useState(imageRect);
   const [listingPageContainerRect] = useState(containerRect);
   const projectData = useGetProject(match?.params?.id);
@@ -76,6 +78,7 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
     }
 
     if (listingPageContainerRect && listingPageImageRect) {
+      setHasValidPositions(true);
       setContainerPosition({
         width: listingPageContainerRect.width,
         height: listingPageContainerRect.height,
@@ -89,8 +92,17 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
         top: listingPageImageRect.top,
         left: listingPageImageRect.left,
       });
+    } else {
+      console.log(listingPageContainerRect, listingPageImageRect);
+      setHasValidPositions(false);
     }
   }, []);
+
+  useEffect(() => {
+    if (!hasValidPositions) {
+      history.push('/');
+    }
+  }, [hasValidPositions]);
 
   const onAnimationEnd = () => {
     if (isReverse) {
@@ -178,7 +190,6 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
             style={styles}
             className="w-full px-8 py-8 md:max-h-full md:h-full md:overflow-x-hidden"
           >
-            {/* px-8 py-8 md:max-h-full md:h-full md:py-4 md:overflow-scroll */}
             <div>
               <div>
                 <h1 className="text-2xl font-bold text-text mb-4">
