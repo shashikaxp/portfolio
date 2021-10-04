@@ -4,7 +4,7 @@ import kinzaBg from './../../../assets/img/kinza_bg.jpeg';
 import { projects } from './projects';
 
 export const kinza: CompanyData = {
-  id: 2,
+  id: 3,
   name: 'Kinza Pvt Ltd',
   bg: kinzaBg,
   position: 'Internship',

@@ -4,7 +4,7 @@ import epigroBg from './../../../assets/img/epigro_bg.jpg';
 import { projects } from './projects';
 
 export const epigro: CompanyData = {
-  id: 1,
+  id: 2,
   name: 'Epigro Pvt Ltd',
   bg: epigroBg,
   position: 'Trainee Software Engineer',

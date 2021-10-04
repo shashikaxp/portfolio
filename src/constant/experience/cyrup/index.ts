@@ -4,7 +4,7 @@ import cyrupBg from './../../../assets/img/cyrup_bg.jpg';
 import { projects } from './projects';
 
 export const cyrup: CompanyData = {
-  id: 0,
+  id: 1,
   name: 'Cyrup Pvt Ltd',
   bg: cyrupBg,
   position: 'Software Engineer',
