@@ -12,11 +12,16 @@ export const projects: ProjectDetails[] = [
   {
     id: 'epigro',
     name: 'Epigro',
-    contribution: [],
+    contribution: ['asd', 'asd'],
     descriptionShort: 'asd',
     descriptionFull: 'asdsd',
     img: epigro_icon,
-    actionButtons: [],
+    actionButtons: [
+      {
+        type: 'visit',
+        data: 'https://epigro.com/',
+      },
+    ],
     screenShots: [
       {
         src: epigro_1,

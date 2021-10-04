@@ -15,10 +15,11 @@ interface ActionButton {
   data: string;
 }
 
-interface ProjectScreenshot {
+export interface ProjectScreenshot {
   src: string;
   width: number;
   height: number;
+  sizes?: string[];
 }
 
 export interface ProjectDetails {

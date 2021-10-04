@@ -1,15 +1,10 @@
 import React from 'react';
 import Gallery from 'react-photo-gallery';
 import { SRLWrapper } from 'simple-react-lightbox';
-
-interface img {
-  src: string;
-  width: number;
-  height: number;
-}
+import { ProjectScreenshot } from './../types/constants';
 
 interface ImageGalleryProps {
-  images?: img[];
+  images?: ProjectScreenshot[];
 }
 
 export const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
@@ -19,7 +14,9 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
   //need to check other possibilities
   return (
     <SRLWrapper>
-      <Gallery photos={images} onClick={() => {}} />
+      <div className="bg-gray-300">
+        <Gallery margin={15} photos={images} onClick={() => {}} />
+      </div>
     </SRLWrapper>
   );
 };
