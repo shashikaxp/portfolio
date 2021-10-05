@@ -109,9 +109,9 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
     let opacity;
     if (index !== currentIndex) {
       if (index > currentIndex) {
-        opacity = 0.8;
+        opacity = 0.5;
       } else {
-        opacity = currentIndex - index === 1 ? 0.8 : 0;
+        opacity = currentIndex - index === 1 ? 0.2 : 0;
       }
     } else {
       opacity = 1;
@@ -157,7 +157,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
               <animated.div
                 style={styles}
                 key={projects[i].id}
-                className="bg-white flex-shrink-0 rounded-2xl"
+                className="bg-white flex-shrink-0 rounded-2xl shadow-2xl"
               >
                 <Link
                   to={`/projects/${projects[i].id}`}
