@@ -6,6 +6,7 @@ import { projects } from './projects';
 export const kinza: CompanyData = {
   id: 4,
   name: 'Kinza Pvt Ltd',
+  country: 'Sri Lanka',
   bg: kinzaBg,
   position: 'Internship',
   time: 'Jun 2015 - Dec 2015 (6 Months)',

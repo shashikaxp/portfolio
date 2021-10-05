@@ -6,6 +6,7 @@ import { projects } from './projects';
 export const cyrup: CompanyData = {
   id: 2,
   name: 'Cyrup Pvt Ltd',
+  country: 'Sri Lanka',
   bg: cyrupBg,
   position: 'Software Engineer',
   time: 'Dec 2016 - Jul 2019 (2 Years 7 Months)',

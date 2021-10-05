@@ -6,6 +6,7 @@ import { projects } from './projects';
 export const epigro: CompanyData = {
   id: 3,
   name: 'Epigro Pvt Ltd',
+  country: 'Sri Lanka',
   bg: epigroBg,
   position: 'Trainee Software Engineer',
   time: 'Mar 2016 - Sep 2016 (7 Months)',

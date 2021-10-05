@@ -6,7 +6,7 @@ import { CompanyData } from './../types/constants';
 
 type UpdatedCompanyData = Pick<
   CompanyData,
-  'description' | 'id' | 'name' | 'position' | 'time'
+  'description' | 'id' | 'name' | 'position' | 'time' | 'country'
 >;
 
 type CompanyProfileProps = UpdatedCompanyData & {
@@ -19,6 +19,7 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
   name,
   position,
   time,
+  country,
   description,
   changeCompany,
   numberOfCompanies,
@@ -46,6 +47,7 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
           )}
         </div>
         <div className="text-3xl md:text-4xl ">{name}</div>
+        <div className="text-base mb-3 md:text-base ">{country}</div>
         <div className="text-xl md:text-2xl md:mt-4 ">{position}</div>
         <div className="text-lg mt-2 font-light md:mt-4 md:text-xl md:font-normal">
           {time}

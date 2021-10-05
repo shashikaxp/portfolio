@@ -6,6 +6,7 @@ import { projects } from './projects';
 export const sideProjectsData: CompanyData = {
   id: 0,
   name: 'Side Projects',
+  country: '',
   bg: sideProject_bg,
   position: '',
   time: '',

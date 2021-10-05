@@ -6,6 +6,7 @@ import { projects } from './../core-illumination/projects';
 export const coreIllumination: CompanyData = {
   id: 1,
   name: 'Core Illumination Pty Ltd',
+  country: 'Australia',
   bg: bg,
   position: 'Software Engineer (Internship)',
   time: 'Mar 2021 - May 2021 (12 Weeks)',

@@ -1,6 +1,7 @@
 export interface CompanyData {
   id: number;
   name: string;
+  country: string;
   position: string;
   time: string;
   description: string;
