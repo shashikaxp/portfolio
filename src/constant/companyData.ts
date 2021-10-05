@@ -4,8 +4,10 @@ import { kinza } from './experience/kinza';
 import { epigro } from './experience/epigro';
 import { cyrup } from './experience/cyrup';
 import { coreIllumination } from './experience/core-illumination';
+import { bazzle } from './experience/bazzle';
 
 export const CompanyData: CompanyDataType[] = [
+  bazzle,
   coreIllumination,
   cyrup,
   epigro,
