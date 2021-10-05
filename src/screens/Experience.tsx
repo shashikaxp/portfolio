@@ -22,7 +22,7 @@ export const Experience: React.FC = () => {
     } else {
       setDisplayData(SideProjects);
     }
-  }, [displayMode]);
+  }, [displayMode, displayData]);
 
   const changeCompany = (i: number) => {
     setIndex(i);
@@ -39,16 +39,17 @@ export const Experience: React.FC = () => {
   return (
     <Div100vh className="overflow-hidden h-full w-full select-none fill-current overscroll-y-contain absolute top-0 left-0 z-[1]">
       <TopBar displaySection={displayMode} setDisplaySection={setDisplayMode} />
-      {displayData.length > 0 &&
+      {displayData &&
+        displayData.length > 0 &&
         transitions((style, i) => (
           <animated.div
-            className="h-full w-screen bg-cover bg-center absolute top-0 left-0 items-center justify-between flex flex-col md:flex-row"
+            className="h-full w-screen bg-cover bg-center absolute top-0 left-0 items-center justify-between flex flex-col md:flex-row md:mt-0"
             style={{
               ...style,
               backgroundImage: `url(${displayData[i].bg})`,
             }}
           >
-            <div className="flex h-1/2 flex-grow-0 items-center justify-center p-4 md:p-12 md:ml-20 md:w-1/3 md:min-h-full ">
+            <div className="flex h-1/2 mt-5 flex-grow-0 items-center justify-center p-4 md:p-12 md:ml-20 md:w-1/3 md:min-h-full md:mt-0 ">
               <CompanyProfile
                 {...displayData[i]}
                 numberOfCompanies={displayData.length}

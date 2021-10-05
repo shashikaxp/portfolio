@@ -50,7 +50,7 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
         <div className="text-lg mt-2 font-light md:mt-4 md:text-xl md:font-normal">
           {time}
         </div>
-        <p className="font-thin mt-2">{description}</p>
+        <p className="font-thin mt-2 hidden md:block">{description}</p>
         <div className="h-8 mt-2 text-center flex flex-row justify-center  md:absolute md:-bottom-24 md:h-24 md:mt-4">
           {id !== numberOfCompanies - 1 && (
             <BsChevronCompactDown

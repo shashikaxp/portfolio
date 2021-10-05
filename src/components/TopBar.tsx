@@ -1,5 +1,11 @@
 import React from 'react';
 import { DisplaySection } from './../types/constants';
+import {
+  AiFillGithub,
+  AiFillLinkedin,
+  AiOutlineProfile,
+  AiOutlineMail,
+} from 'react-icons/ai';
 
 interface TopBarProps {
   displaySection: DisplaySection;
@@ -18,7 +24,7 @@ export const TopBar: React.FC<TopBarProps> = ({
   };
 
   return (
-    <div className="w-full absolute flex justify-between p-8 z-50">
+    <div className="w-full absolute flex flex-col-reverse items-center gap-4 md:justify-between p-4 z-50 md:flex-row md:p-8">
       <div className="flex gap-x-4 font-thin text-white text-xl">
         <div
           className={`cursor-pointer ${getSelectedClass('side-projects')}`}
@@ -33,7 +39,29 @@ export const TopBar: React.FC<TopBarProps> = ({
           Experience
         </div>
       </div>
-      <div>socials</div>
+      <div className="flex gap-2 text-white cursor-pointer text-3xl">
+        <a
+          href="https://github.com/shashikaxp"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <AiFillGithub />
+        </a>
+
+        <a
+          href="https://linkedin.com/in/shashikaxp"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <AiFillLinkedin />
+        </a>
+
+        <a href="mailto:shashikaxp@gmail.com">
+          <AiOutlineMail />
+        </a>
+
+        <AiOutlineProfile />
+      </div>
     </div>
   );
 };
