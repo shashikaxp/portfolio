@@ -4,7 +4,7 @@ import bg from './../../../assets/img/core_illumination_bg.jpg';
 import { projects } from './../core-illumination/projects';
 
 export const coreIllumination: CompanyData = {
-  id: 1,
+  id: 2,
   name: 'Core Illumination Pty Ltd',
   bg: bg,
   position: 'Software Engineer (Internship)',
