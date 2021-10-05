@@ -33,3 +33,5 @@ export interface ProjectDetails {
   screenShots: ProjectScreenshot[];
   actionButtons: ActionButton[];
 }
+
+export type DisplaySection = 'side-projects' | 'experience';

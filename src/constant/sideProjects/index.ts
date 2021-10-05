@@ -1,9 +1,9 @@
-import { CompanyData } from './../../../types/constants';
+import { CompanyData } from '../../types/constants';
 
-import sideProject_bg from './../../../assets/img/sideproject_bg.jpg';
+import sideProject_bg from './../../assets/img/sideproject_bg.jpg';
 import { projects } from './projects';
 
-export const sideProjects: CompanyData = {
+export const sideProjectsData: CompanyData = {
   id: 0,
   name: 'Side Projects',
   bg: sideProject_bg,

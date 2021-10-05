@@ -4,7 +4,7 @@ import bazzleBg from './../../../assets/img/bazzle_bg.jpg';
 import { projects } from './projects';
 
 export const bazzle: CompanyData = {
-  id: 1,
+  id: 0,
   name: 'Spotfood Pty Ltd',
   bg: bazzleBg,
   position: 'Software Engineer',

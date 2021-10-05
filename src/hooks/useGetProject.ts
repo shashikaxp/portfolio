@@ -2,6 +2,7 @@ import { find } from 'lodash';
 import { ProjectDetails } from './../types/constants';
 
 import { CompanyData } from './../constant/companyData';
+import { SideProjects } from './../constant/sideProjects';
 
 export const useGetProject = (
   projectId?: string
@@ -10,7 +11,7 @@ export const useGetProject = (
 
   let projectDetails: ProjectDetails | undefined;
 
-  for (let company of CompanyData) {
+  for (let company of [...CompanyData, ...SideProjects]) {
     const project = find(company.projects, { id: projectId });
     if (project) {
       projectDetails = project;
