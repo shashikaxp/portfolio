@@ -25,7 +25,7 @@ export const Experience: React.FC = () => {
     <Div100vh className="overflow-hidden h-full w-full select-none fill-current overscroll-y-contain absolute top-0 left-0 z-[1]">
       {transitions((style, i) => (
         <animated.div
-          className="h-full w-screen bg-cover absolute top-0 left-0 items-center justify-between flex flex-col md:flex-row"
+          className="h-full w-screen bg-cover bg-center absolute top-0 left-0 items-center justify-between flex flex-col md:flex-row"
           style={{
             ...style,
             backgroundImage: `url(${CompanyData[i].bg})`,

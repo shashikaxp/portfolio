@@ -107,9 +107,12 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 
   const getOpacity = (index: number) => {
     let opacity;
-
     if (index !== currentIndex) {
-      opacity = currentIndex - index === 1 ? 0.5 : 0.8;
+      if (index > currentIndex) {
+        opacity = 0.8;
+      } else {
+        opacity = currentIndex - index === 1 ? 0.8 : 0;
+      }
     } else {
       opacity = 1;
     }
@@ -147,7 +150,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         <animated.div
           ref={projectContainerRef}
           style={{ ...styles, transform: getTranslateStyle() }}
-          className={`flex space-x-4 relative overflow-hidden items-center text-text`}
+          className={`flex space-x-4 relative overflow-show items-center text-text`}
         >
           {springs.map((styles, i) => {
             return (
