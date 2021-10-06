@@ -25,7 +25,7 @@ export const TopBar: React.FC<TopBarProps> = ({
 
   return (
     <div className="w-full absolute flex flex-col-reverse items-center gap-4 md:justify-between p-4 z-50 md:flex-row md:p-8">
-      <div className="flex gap-x-4 font-thin text-white text-xl">
+      <div className="flex mt-3 gap-x-4 font-thin text-white text-xl md:mt-0">
         <div
           className={`cursor-pointer ${getSelectedClass('side-projects')}`}
           onClick={() => setDisplaySection('side-projects')}
