@@ -42,7 +42,7 @@ export const PortfolioContainer: React.FC<PortfolioContainerProps> = ({
                     backgroundImage: `url(${data[i].bg})`,
                   }}
                 >
-                  <div className="flex h-1/2 mt-5 flex-grow-0 items-center justify-center p-4 md:p-12 md:ml-20 md:w-1/3 md:min-h-full md:mt-0 ">
+                  <div className="flex w-full mt-5 pt-24 flex-grow-0 items-end justify-center p-4 md:p-12 md:ml-20 md:w-1/3 md:items-center md:min-h-full md:mt-0 ">
                     <CompanyProfile
                       {...data[i]}
                       numberOfCompanies={data.length}

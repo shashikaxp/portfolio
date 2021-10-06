@@ -24,8 +24,8 @@ export const TopBar: React.FC<TopBarProps> = ({
   };
 
   return (
-    <div className="w-full absolute flex flex-col-reverse items-center gap-4 md:justify-between p-4 z-50 md:flex-row md:p-8">
-      <div className="flex mt-3 gap-x-4 font-thin text-white text-xl md:mt-0">
+    <div className="w-full absolute flex flex-col-reverse items-center p-2 gap-4 md:justify-between md:p-4 z-50 md:flex-row md:p-8">
+      <div className="flex mt-3 gap-x-8 md:gap-x-4 font-thin text-white text-xl md:mt-0">
         <div
           className={`cursor-pointer ${getSelectedClass('side-projects')}`}
           onClick={() => setDisplaySection('side-projects')}
@@ -39,7 +39,7 @@ export const TopBar: React.FC<TopBarProps> = ({
           Experience
         </div>
       </div>
-      <div className="flex gap-2 text-white cursor-pointer text-3xl">
+      <div className="flex gap-8 mb-3 text-white cursor-pointer text-xl md:text-3xl md:mb-0 md:gap-2 ">
         <a
           href="https://github.com/shashikaxp"
           target="_blank"

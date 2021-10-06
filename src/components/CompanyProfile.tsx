@@ -38,7 +38,7 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
       className="flex items-center justify-center flex-col"
     >
       <div className="text-white font-primary text-center relative md:text-left ">
-        <div className="h-4 text-center flex flex-row justify-center md:absolute md:-top-24 md:h-24 md:mt-4">
+        <div className="h-8 text-center flex flex-row justify-center md:absolute md:-top-24 md:h-24 md:mt-4">
           {id !== 0 && (
             <BsChevronCompactUp
               onClick={() => changeCompany(id - 1)}
@@ -46,14 +46,16 @@ export const CompanyProfile: React.FC<CompanyProfileProps> = ({
             />
           )}
         </div>
-        <div className="text-3xl md:text-4xl ">{name}</div>
-        <div className="text-base mb-3 md:text-base ">{country}</div>
+        <div className="text-2xl font-bold md:text-4xl md:font-normal ">
+          {name}
+        </div>
+        <div className="text-base mb-1 md:mb-3 md:text-base ">{country}</div>
         <div className="text-xl md:text-2xl md:mt-4 ">{position}</div>
         <div className="text-lg font-light md:mt-4 md:text-xl md:font-normal">
           {time}
         </div>
         <p className="font-thin mt-2 hidden md:block">{description}</p>
-        <div className="h-4 text-center flex flex-row justify-center  md:absolute md:-bottom-24 md:h-24 md:mt-4">
+        <div className="h-8 text-center flex flex-row justify-center  md:absolute md:-bottom-24 md:h-24 md:mt-4">
           {id !== numberOfCompanies - 1 && (
             <BsChevronCompactDown
               onClick={() => changeCompany(id + 1)}
