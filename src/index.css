@@ -45,6 +45,10 @@ body {
   @apply font-primary;
 }
 
+.w-c {
+  will-change: opacity;
+}
+
 input,
 textarea,
 button,

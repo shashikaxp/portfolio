@@ -36,7 +36,7 @@ export const PortfolioContainer: React.FC<PortfolioContainerProps> = ({
             {i < data.length && (
               <div>
                 <animated.div
-                  className="h-full w-screen bg-cover bg-center absolute top-0 left-0 items-center justify-between flex flex-col md:flex-row md:mt-0"
+                  className="w-c h-full w-screen bg-cover bg-center absolute top-0 left-0 items-center justify-between flex flex-col md:flex-row md:mt-0"
                   style={{
                     ...style,
                     backgroundImage: `url(${data[i].bg})`,

@@ -33,6 +33,7 @@ export const Experience: React.FC = () => {
       {transitions(({ opacity }, item) =>
         item ? (
           <animated.div
+            className="w-c"
             style={{
               opacity: opacity.to({ range: [0.0, 1.0], output: [0, 1] }),
             }}
@@ -41,6 +42,7 @@ export const Experience: React.FC = () => {
           </animated.div>
         ) : (
           <animated.div
+            className="w-c"
             style={{
               opacity: opacity.to({ range: [1.0, 0.0], output: [1, 0] }),
             }}
