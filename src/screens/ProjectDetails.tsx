@@ -148,7 +148,7 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
             getClasses()
           }
         >
-          <div className="absolute right-3 top-3">
+          <div className="absolute right-3 top-3  z-20">
             <AiOutlineCloseCircle
               onClick={close}
               className="cursor-pointer w-10 h-10 font-thin hover:text-red-500"

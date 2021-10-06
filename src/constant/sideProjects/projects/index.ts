@@ -30,12 +30,12 @@ export const projects: ProjectDetails[] = [
     img: icon,
     name: 'ithiri',
     screenShots: [
-      { height: 4, width: 3, src: ithir1 },
-      { height: 4, width: 3, src: ithir2 },
-      { height: 4, width: 3, src: ithir3 },
-      { height: 4, width: 3, src: ithir4 },
-      { height: 3, width: 4, src: ithir_m_1 },
-      { height: 3, width: 4, src: ithir_m_2 },
+      { src: ithir1 },
+      { ratio: 'horizontal', src: ithir2 },
+      { ratio: 'horizontal', src: ithir3 },
+      { ratio: 'horizontal', src: ithir4 },
+      { ratio: 'portrait', src: ithir_m_1 },
+      { ratio: 'portrait', src: ithir_m_2 },
     ],
     technologies: [
       'React.js',
@@ -59,10 +59,7 @@ export const projects: ProjectDetails[] = [
     descriptionShort: '',
     img: uniLifeIcon,
     name: 'UniLife',
-    screenShots: [
-      { height: 4, width: 3, src: uniLife1 },
-      { height: 3, width: 3, src: uniLife2 },
-    ],
+    screenShots: [{ src: uniLife1 }, { ratio: 'portrait', src: uniLife2 }],
     technologies: ['Unity', 'C#'],
   },
   {

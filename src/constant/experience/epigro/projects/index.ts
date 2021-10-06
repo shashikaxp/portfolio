@@ -23,36 +23,12 @@ export const projects: ProjectDetails[] = [
       },
     ],
     screenShots: [
-      {
-        src: epigro_1,
-        height: 1,
-        width: 1.5,
-      },
-      {
-        src: epigro_2,
-        height: 1,
-        width: 1.5,
-      },
-      {
-        src: epigro_3,
-        height: 0.75,
-        width: 2.5,
-      },
-      {
-        src: epigro_mobile_1,
-        height: 1,
-        width: 0.95,
-      },
-      {
-        src: epigro_mobile_2,
-        height: 1,
-        width: 0.95,
-      },
-      {
-        src: epigro_mobile_3,
-        height: 1,
-        width: 0.95,
-      },
+      { src: epigro_1, ratio: 'horizontal' },
+      { src: epigro_2, ratio: 'horizontal' },
+      { src: epigro_3, ratio: 'horizontal' },
+      { src: epigro_mobile_1, ratio: 'portrait' },
+      { src: epigro_mobile_2, ratio: 'portrait' },
+      { src: epigro_mobile_3, ratio: 'portrait' },
     ],
     technologies: ['HTML', 'CSS', 'jQuery', 'Bootstrap'],
   },

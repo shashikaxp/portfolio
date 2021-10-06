@@ -10,6 +10,7 @@ export interface CompanyData {
 }
 
 export type ActionType = 'github' | 'visit';
+export type Ratio = 'portrait' | 'horizontal';
 
 interface ActionButton {
   type: ActionType;
@@ -18,9 +19,7 @@ interface ActionButton {
 
 export interface ProjectScreenshot {
   src: string;
-  width: number;
-  height: number;
-  sizes?: string[];
+  ratio?: Ratio;
 }
 
 export interface ProjectDetails {

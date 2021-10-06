@@ -13,6 +13,20 @@ module.exports = {
           DEFAULT: '#4E4E4E',
         },
       },
+      gridRow: {
+        'span-portrait': 'span 1.5 / auto',
+      },
+      gridColumn: {
+        'span-horizontal': 'span 2 / auto',
+      },
+      gridTemplateColumns: {
+        'img-grid-md': 'repeat(auto-fit, minmax(240px, 1fr))',
+        'img-grid-sm': 'repeat(auto-fit, 1fr)',
+      },
+      gridAutoRows: {
+        'img-grid-md': 'minmax(240px, 400px)',
+        'img-grid-sm': '400px',
+      },
     },
   },
   variants: {
