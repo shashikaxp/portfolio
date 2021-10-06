@@ -1,11 +1,7 @@
 import React from 'react';
 import { DisplaySection } from './../types/constants';
-import {
-  AiFillGithub,
-  AiFillLinkedin,
-  AiOutlineProfile,
-  AiOutlineMail,
-} from 'react-icons/ai';
+import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai';
+import { GoFileCode } from 'react-icons/go';
 
 interface TopBarProps {
   displaySection: DisplaySection;
@@ -60,7 +56,7 @@ export const TopBar: React.FC<TopBarProps> = ({
           <AiOutlineMail />
         </a>
 
-        <AiOutlineProfile />
+        <GoFileCode />
       </div>
     </div>
   );
