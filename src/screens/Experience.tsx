@@ -20,9 +20,9 @@ export const Experience: React.FC = () => {
   }, [displayMode]);
 
   const transitions = useTransition(animationMode, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
+    from: { opacity: 0, display: 'absolute' },
+    enter: { opacity: 1, display: 'block' },
+    leave: { opacity: 0, display: 'absolute' },
     reverse: animationMode,
   });
 
@@ -30,11 +30,12 @@ export const Experience: React.FC = () => {
     <Div100vh className="overflow-hidden h-full w-full select-none fill-current overscroll-y-contain absolute top-0 left-0 z-[1]">
       <TopBar displaySection={displayMode} setDisplaySection={setDisplayMode} />
 
-      {transitions(({ opacity }, item) =>
+      {transitions(({ opacity, display }, item) =>
         item ? (
           <animated.div
             className="w-c"
             style={{
+              display,
               opacity: opacity.to({ range: [0.0, 1.0], output: [0, 1] }),
             }}
           >
