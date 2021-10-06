@@ -1,6 +1,6 @@
 import { useTransition } from '@react-spring/core';
 import { animated } from '@react-spring/web';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { CompanyData } from './../types/constants';
 import { CompanyProfile } from './CompanyProfile';
@@ -14,10 +14,6 @@ export const PortfolioContainer: React.FC<PortfolioContainerProps> = ({
   data,
 }) => {
   const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    setIndex(0);
-  }, [data]);
 
   const transitions = useTransition(index, {
     key: index,
