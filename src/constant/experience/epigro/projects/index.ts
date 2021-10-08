@@ -12,9 +12,17 @@ export const projects: ProjectDetails[] = [
   {
     id: 'epigro',
     name: 'Epigro',
-    contribution: ['asd', 'asd'],
-    descriptionShort: 'asd',
-    descriptionFull: [],
+    contribution: [
+      'Add new web pages to the existing website',
+      'Complete maintenance on existing website',
+      'Update the website to have more mobile responsiveness',
+      'Provide technical support to the office staff',
+    ],
+    descriptionShort:
+      'This is the official website of Epigro (Pvt) Ltd developed to provide updated customers with latest products in the energy serving industry',
+    descriptionFull: [
+      'Epigro is an integrated energy company, becoming a trusted business providing and installing quality solar systems to the residential, commercial, and industrial markets. This is the official website of Epigro (Pvt) Ltd developed to provide updated customers with latest products in the energy serving industry',
+    ],
     img: epigro_icon,
     actionButtons: [
       {

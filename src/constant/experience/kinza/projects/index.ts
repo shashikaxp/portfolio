@@ -16,10 +16,18 @@ export const projects: ProjectDetails[] = [
     id: 'snailruns',
     name: 'SnailRuns',
     img: snailRuns,
-    descriptionShort: 'asdasd',
-    descriptionFull: [],
+    descriptionShort:
+      'Snailruns is an online platform for creating and delivering personalized greeting cards in Sri Lanka',
+    descriptionFull: [
+      'Snailruns is an online platform for creating and delivering personalized greeting cards in Sri Lanka',
+      'They offer a vast collection of card designs under various occasions and users can create their own greeting cards by uploading pictures and ideas',
+    ],
     actionButtons: [],
-    contribution: ['Sadas', 'ASdsad', 'asdasd'],
+    contribution: [
+      'Design and implement the front-end application using WordPress',
+      'Integrate WooCommerce plugin to support e-commerce functionalities',
+      'Use html canvas to develop a platform that enables users to create and edit personalized greeting cards',
+    ],
     screenShots: [],
     technologies: ['Wordpress', 'WooCommerce', 'PHP', 'HTML', 'CSS'],
   },
@@ -27,10 +35,18 @@ export const projects: ProjectDetails[] = [
     id: 'afraymond',
     name: 'A.F. Raymond',
     img: afr,
-    descriptionShort: 'asdasd',
-    descriptionFull: [],
+    descriptionShort:
+      "A F Raymond is Sri Lanka's and the region's oldest firm of Funeral Directors",
+    descriptionFull: [
+      "A F Raymond is Sri Lanka's and the region's oldest firm of Funeral Directors",
+      "They offer webcast of a funeral service taking place from within the parlour. Viewed live over the internet, it allows everyone you love to attend your loved one's service, no matter where they are in the world.",
+    ],
     actionButtons: [{ type: 'visit', data: 'https://afraymond.com/' }],
-    contribution: ['Sadas', 'ASdsad', 'asdasd'],
+    contribution: [
+      'Develop a full front-end application',
+      'Connect with a small database to fetch data and populate the front end',
+      'Confirm that completed website meet client requirement',
+    ],
     screenShots: [
       { src: afr1, ratio: 'horizontal' },
       { src: afr2, ratio: 'horizontal' },

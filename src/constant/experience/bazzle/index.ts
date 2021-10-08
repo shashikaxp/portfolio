@@ -8,9 +8,9 @@ export const bazzle: CompanyData = {
   name: 'Spotfood Pty Ltd',
   country: 'Australia',
   bg: bazzleBg,
-  position: 'Software Engineer',
+  position: 'Software Engineer (Part-Time)',
   time: 'Feb 2020 - Present',
   description:
-    "It is a long established fact that opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page ed",
+    ' It is a One stop-shop for professional event planners as well as DIY party planners. Currently I am working with Spotfood as a part-time software engineer. My contribution in developing Bazzle can be listed under two main segments as Events and Venue.',
   projects: projects,
 };

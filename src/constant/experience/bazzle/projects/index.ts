@@ -26,8 +26,11 @@ import bazzle_vm_5 from './../../../../assets/img/projects/bazzle-venue/bazzle_v
 export const projects: ProjectDetails[] = [
   {
     id: 'bazzle-events',
-    descriptionFull: [],
-    descriptionShort: 'SAd',
+    descriptionFull: [
+      'It is a digital platform connects customers planning their own milestone events, with all the different types of vendors they might need, in a single app. Furthermore, customers can Get Quotes, Hire and Collaborate with vendors all within the same platform, providing a complete Vendor Management System',
+    ],
+    descriptionShort:
+      'It is a digital platform connects customers planning their own milestone events, with all the different types of vendors they might need, in a single app',
     img: icon,
     name: 'Bazzle Events',
     screenShots: [
@@ -43,18 +46,42 @@ export const projects: ProjectDetails[] = [
     technologies: [
       'Ionic',
       'Angular',
-      'Firebase',
-      'Cloud Functions',
       'Node.js',
       'Express.js',
+      'TypeScript',
+      'Firebase',
+      'Cloud Functions',
     ],
-    contribution: [],
-    actionButtons: [],
+    contribution: [
+      'Develop a full ionic application that supports web, mobile and tablet devices',
+      'Connect firebase SDK to fetch and manage application data',
+      'Develop cloud functions and REST API to handle major application functionalities',
+      'Integrate the stripe payment gateway and Zoom marketplace',
+      'Apply software changes and alterations based on specific design specifications',
+      'Add new features to the application requested by the current customers',
+    ],
+    actionButtons: [
+      {
+        type: 'visit',
+        data: 'https://hellobazzle.com/',
+      },
+      {
+        type: 'ios',
+        data: 'https://apps.apple.com/au/app/bazzle-party-planning/id1440616043',
+      },
+      {
+        type: 'android',
+        data: 'https://play.google.com/store/apps/details?id=com.mpdp.spotfood&hl=en_AU',
+      },
+    ],
   },
   {
     id: 'bazzle-vendors',
-    descriptionFull: [],
-    descriptionShort: 'SAd',
+    descriptionFull: [
+      'Bazzle Vendors is created to facilitate the vendors registered with Bazzle platform. They can monitor their bookings, invoices, earnings, customer reviews, etc...',
+    ],
+    descriptionShort:
+      'Bazzle Vendors is created to facilitate the vendors registered with Bazzle platform. They can monitor their bookings, invoices, earnings, customer reviews, etc...',
     img: bazzle_v_icon,
     name: 'Bazzle Vendors',
     screenShots: [
@@ -70,12 +97,31 @@ export const projects: ProjectDetails[] = [
     ],
     technologies: [
       'Framework7',
-      'Firebase',
-      'Cloud Functions',
       'Node.js',
       'Express.js',
+      'TypeScript',
+      'Firebase',
+      'Cloud Functions',
     ],
-    contribution: [],
-    actionButtons: [],
+    contribution: [
+      'Address complex bugs in effective manner',
+      'Implement UI changes using Framework7 components',
+      'Introduce a new build system using webpack',
+      'Add on new features to the application.',
+    ],
+    actionButtons: [
+      {
+        type: 'visit',
+        data: 'https://hellobazzle.com/',
+      },
+      {
+        type: 'ios',
+        data: 'https://apps.apple.com/au/app/spotfood-vendor/id1440616684',
+      },
+      {
+        type: 'android',
+        data: 'https://play.google.com/store/apps/details?id=com.mpdp.spotfoodVenue',
+      },
+    ],
   },
 ];

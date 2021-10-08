@@ -203,7 +203,7 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
                     <h1 className="text-xl font-bold text-text mb-4">
                       My Contribution
                     </h1>
-                    <ul className="list-disc list-inside text-text-light">
+                    <ul className="list-disc  ml-4 text-text-light">
                       {projectData.contribution.map((res) => {
                         return <li key={res}>{res}</li>;
                       })}
@@ -217,7 +217,7 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
                     <h1 className="text-xl font-bold text-text mb-4">
                       Features and Techniques
                     </h1>
-                    <ul className="list-disc list-inside text-text-light">
+                    <ul className="list-disc ml-4 text-text-light">
                       {projectData.features.map((feature) => {
                         return <li key={feature}>{feature}</li>;
                       })}

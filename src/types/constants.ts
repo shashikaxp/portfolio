@@ -9,7 +9,7 @@ export interface CompanyData {
   projects: ProjectDetails[];
 }
 
-export type ActionType = 'github' | 'visit';
+export type ActionType = 'github' | 'visit' | 'ios' | 'android';
 export type Ratio = 'portrait' | 'horizontal';
 
 interface ActionButton {

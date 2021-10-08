@@ -11,6 +11,6 @@ export const epigro: CompanyData = {
   position: 'Trainee Software Engineer',
   time: 'Mar 2016 - Sep 2016 (7 Months)',
   description:
-    "It is a long established fact that opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page ed",
+    'Epigro is a comprehensive solar developer that handles the whole process of going solar from beginning to end. I have worked as a Trainee Software Engineer with Epigro',
   projects: projects,
 };

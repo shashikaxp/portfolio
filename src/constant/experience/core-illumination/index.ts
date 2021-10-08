@@ -11,6 +11,6 @@ export const coreIllumination: CompanyData = {
   position: 'Software Engineer (Internship)',
   time: 'Mar 2021 - May 2021 (12 Weeks)',
   description:
-    "It is a long established fact that opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page ed",
+    'It is a software development company based in Brisbane, Australia. I got the opportunity to work with them under the internship program of my master’s degree',
   projects: projects,
 };

@@ -53,10 +53,30 @@ export const projects: ProjectDetails[] = [
     id: 'sayhello2',
     name: 'SayHello V2',
     img: sh2_icon,
-    actionButtons: [{ type: 'visit', data: 'https://sayhello.lk/' }],
-    contribution: [],
-    descriptionFull: [],
-    descriptionShort: 'ASd',
+    actionButtons: [
+      {
+        type: 'visit',
+        data: 'https://sayhello.lk/',
+      },
+      {
+        type: 'android',
+        data: 'https://play.google.com/store/apps/details?id=sayhello.lk',
+      },
+      {
+        type: 'ios',
+        data: 'https://apps.apple.com/us/app/sayhello-english/id1443580169?app=itunes&ign-mpt=uo%3D4',
+      },
+    ],
+    contribution: [
+      'Initialize and architect the mobile application',
+      'Create a collection of re-usable react native UI components for the application',
+      'Develop most of the application pages',
+    ],
+    descriptionFull: [
+      'It is an improved version of SayHello application.',
+      'This mobile application has been developed using the React Native platform. It offers an updated user interface and enhanced experience to the users',
+    ],
+    descriptionShort: 'It is an improved version of SayHello application',
     screenShots: [
       { src: sh2_1, ratio: 'portrait' },
       { src: sh2_2, ratio: 'portrait' },
@@ -76,9 +96,23 @@ export const projects: ProjectDetails[] = [
     name: 'SayHello',
     img: sh_icon,
     actionButtons: [{ type: 'visit', data: 'https://sayhello.lk/' }],
-    contribution: [],
-    descriptionFull: [],
-    descriptionShort: 'asdsad',
+    contribution: [
+      'Develop a full ionic application',
+      'Use plugins to access native device functionality (Camera, Microphone, Storage)',
+      'Implement offline support (Store recordings on the device and send them to server when there is an internet connection)',
+      'Connect to a custom REST API to fetch data and perform essential tasks',
+      'Active involvement with the marketplace publication process',
+      'Create internal applications for managing various areas of the business (web apps, customer support, sales, etc...)',
+      'Apply software changes and alterations based on specific design specifications',
+      'Implement and update the application modules to improve the overall performance of the application',
+      'Perform automated testing tasks',
+    ],
+    descriptionFull: [
+      'It is an English learning application introduced to improve unique skill level with personalized support',
+      'SayHello facilitates the users to send their recorded voice to instructors and get the feedback on their pronunciation and grammar',
+    ],
+    descriptionShort:
+      'It is an English learning application introduced to improve unique skill level with personalized support',
     screenShots: [
       { src: sh_1, ratio: 'portrait' },
       { src: sh_2, ratio: 'portrait' },
@@ -98,8 +132,12 @@ export const projects: ProjectDetails[] = [
   },
   {
     name: 'DISC',
-    descriptionFull: [],
-    descriptionShort: 'asdsad',
+    descriptionFull: [
+      'It is a desktop application that includes behavior assessment games to measure user responses',
+      "DISC measures user responses through user's image recognition and voice instructions given in multiple languages.  Ultimately, it assesses the behavior with the response time and touch coordinates and generate reports",
+    ],
+    descriptionShort:
+      'It is a desktop application that includes behavior assessment games to measure user responses',
     id: 'disc',
     img: disc_icon,
     screenShots: [
@@ -111,15 +149,41 @@ export const projects: ProjectDetails[] = [
       { src: disc_5, ratio: 'horizontal' },
     ],
     actionButtons: [],
-    technologies: ['AngularJS', 'Electron', 'Sqlite', 'Node.js'],
-    contribution: [],
+    technologies: [
+      'AngularJS',
+      'Electron',
+      'Sqlite',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+    ],
+    contribution: [
+      'Develop a full electron application',
+      'Perform automated testing task',
+      'Build REST API that serves data to the front-end app and handles essential operations',
+      'Add offline support with database synchronization',
+      'Add multi language support',
+      'Use third party plugins to create various reports on saved data',
+      'Verify the viability of the final product in meeting client requirements',
+      'Analyze the scope of the future features and changes with the product team',
+    ],
   },
   {
     id: 'sizeswap',
     actionButtons: [],
-    contribution: [],
-    descriptionFull: [],
-    descriptionShort: 'asd',
+    contribution: [
+      'Develop a full ionic application',
+      'Connect the application with the custom REST API to perform various functionalities',
+      'Use third party SDKs to achieve OAuth login',
+      'Use Plugins to access native device functionality (Camera)',
+      'Create custom UI components to use through out the application',
+    ],
+    descriptionFull: [
+      'SizeSwap is an online market place which facilitates the users to swap and trade sneakers',
+      'This platform allows users to exchange their sneaker with another sneaker (One to One) or trade with more sneakers based the market value',
+    ],
+    descriptionShort:
+      'SizeSwap is an online market place which facilitates the users to swap and trade sneakers',
     img: sw_icon,
     name: 'SizeSwap',
     technologies: ['Ionic', 'Angular', 'TypeScript'],

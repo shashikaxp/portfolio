@@ -90,6 +90,7 @@ export const projects: ProjectDetails[] = [
       { type: 'github', data: 'https://github.com/shashikaxp/portfolio' },
     ],
     features: [
+      'Preload assets to improve page loading time',
       'Use react spring to have smooth animation',
       'Great user experience',
     ],

@@ -11,6 +11,6 @@ export const kinza: CompanyData = {
   position: 'Internship',
   time: 'Jun 2015 - Dec 2015 (6 Months)',
   description:
-    "It is a long established fact that opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page ed",
+    'The KINZA Group (Pvt.) Ltd is an IT service, consulting and business solutions company serving local and international businesses. I started my professional carrier as an intern at Kinza Group under my first-degree program',
   projects: projects,
 };
