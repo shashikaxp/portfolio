@@ -90,10 +90,8 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
             >
               <div className="text-center px-12 text-white font-thin md:text-xl md:w-2/3 md:pr-16 md:text-right">
                 <div>
-                  A Software Developer with 4+ years of Software Development
-                  experience on various Platforms, Passionate to build Polished,
-                  Innovative and well-detailed Apps with Fluid Animations to
-                  complement the Design.
+                  A Software Developer with 5+ years of Software Development
+                  experience on various Platforms.
                 </div>
                 <div className="mt-8 flex items-center justify-center md:items-end md:justify-end">
                   <div
