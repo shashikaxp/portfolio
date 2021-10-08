@@ -14,7 +14,7 @@ export const projects: ProjectDetails[] = [
     name: 'Epigro',
     contribution: ['asd', 'asd'],
     descriptionShort: 'asd',
-    descriptionFull: 'asdsd',
+    descriptionFull: [],
     img: epigro_icon,
     actionButtons: [
       {

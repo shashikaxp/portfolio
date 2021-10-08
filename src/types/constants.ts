@@ -26,10 +26,11 @@ export interface ProjectDetails {
   id: string;
   name: string;
   img: string;
-  descriptionFull: string;
+  descriptionFull: string[];
   descriptionShort: string;
   technologies: string[];
-  contribution: string[];
+  contribution?: string[];
+  features?: string[];
   screenShots: ProjectScreenshot[];
   actionButtons: ActionButton[];
 }

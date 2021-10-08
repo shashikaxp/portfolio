@@ -17,7 +17,7 @@ export const projects: ProjectDetails[] = [
     name: 'SnailRuns',
     img: snailRuns,
     descriptionShort: 'asdasd',
-    descriptionFull: 'asdasd',
+    descriptionFull: [],
     actionButtons: [],
     contribution: ['Sadas', 'ASdsad', 'asdasd'],
     screenShots: [],
@@ -28,7 +28,7 @@ export const projects: ProjectDetails[] = [
     name: 'A.F. Raymond',
     img: afr,
     descriptionShort: 'asdasd',
-    descriptionFull: 'asdasd',
+    descriptionFull: [],
     actionButtons: [{ type: 'visit', data: 'https://afraymond.com/' }],
     contribution: ['Sadas', 'ASdsad', 'asdasd'],
     screenShots: [

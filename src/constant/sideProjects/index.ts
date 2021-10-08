@@ -11,6 +11,6 @@ export const sideProjectsData: CompanyData = {
   position: '',
   time: '',
   description:
-    "It is a long established fact that opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page ed",
+    'As I am involved in a dynamic industry, it is essential to be equipped with latest technologies and trends. Developing side projects helps to keep my knowledge fresh and enhance the expertise.  In my leisure time, I have developed a few of my ideas into working applications.',
   projects: projects,
 };

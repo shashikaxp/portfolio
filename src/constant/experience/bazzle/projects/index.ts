@@ -26,7 +26,7 @@ import bazzle_vm_5 from './../../../../assets/img/projects/bazzle-venue/bazzle_v
 export const projects: ProjectDetails[] = [
   {
     id: 'bazzle-events',
-    descriptionFull: 'sad',
+    descriptionFull: [],
     descriptionShort: 'SAd',
     img: icon,
     name: 'Bazzle Events',
@@ -53,7 +53,7 @@ export const projects: ProjectDetails[] = [
   },
   {
     id: 'bazzle-vendors',
-    descriptionFull: 'sad',
+    descriptionFull: [],
     descriptionShort: 'SAd',
     img: bazzle_v_icon,
     name: 'Bazzle Vendors',

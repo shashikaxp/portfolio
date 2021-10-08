@@ -55,7 +55,7 @@ export const projects: ProjectDetails[] = [
     img: sh2_icon,
     actionButtons: [{ type: 'visit', data: 'https://sayhello.lk/' }],
     contribution: [],
-    descriptionFull: 'asd',
+    descriptionFull: [],
     descriptionShort: 'ASd',
     screenShots: [
       { src: sh2_1, ratio: 'portrait' },
@@ -77,7 +77,7 @@ export const projects: ProjectDetails[] = [
     img: sh_icon,
     actionButtons: [{ type: 'visit', data: 'https://sayhello.lk/' }],
     contribution: [],
-    descriptionFull: 'Sadd',
+    descriptionFull: [],
     descriptionShort: 'asdsad',
     screenShots: [
       { src: sh_1, ratio: 'portrait' },
@@ -98,7 +98,7 @@ export const projects: ProjectDetails[] = [
   },
   {
     name: 'DISC',
-    descriptionFull: 'asdasd',
+    descriptionFull: [],
     descriptionShort: 'asdsad',
     id: 'disc',
     img: disc_icon,
@@ -118,7 +118,7 @@ export const projects: ProjectDetails[] = [
     id: 'sizeswap',
     actionButtons: [],
     contribution: [],
-    descriptionFull: 'sdasd',
+    descriptionFull: [],
     descriptionShort: 'asd',
     img: sw_icon,
     name: 'SizeSwap',

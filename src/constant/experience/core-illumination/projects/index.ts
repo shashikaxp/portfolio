@@ -10,7 +10,7 @@ export const projects: ProjectDetails[] = [
       { type: 'visit', data: 'https://www.coreillumination.com/' },
     ],
     contribution: [],
-    descriptionFull: 'asd',
+    descriptionFull: [],
     descriptionShort: 'ASd',
     screenShots: [],
     technologies: ['Angular', 'Java', 'Postgres'],

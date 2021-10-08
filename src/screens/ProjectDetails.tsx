@@ -160,12 +160,6 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
                 <img className="w-36 h-36" ref={imageRef} src={projectImage} />
               </div>
               <animated.div style={styles}>
-                <div className="text-center mt-4 font-bold text-3xl text-text">
-                  <h1>{projectData?.name}</h1>
-                </div>
-                <div className="text-center mt-4 text-text">
-                  <p>{projectData?.descriptionFull}</p>
-                </div>
                 <div className="mt-8 flex gap-2 flex-wrap justify-center">
                   {projectData?.technologies.map((tech) => {
                     return <TechChip key={tech} label={tech} />;
@@ -191,18 +185,48 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
             className="w-full px-8 py-8 md:max-h-full md:h-full md:overflow-x-hidden"
           >
             <div>
-              <div>
-                <h1 className="text-2xl font-bold text-text mb-4">
-                  My Contribution
+              <div className="mb-8">
+                <h1 className="mb-4 font-bold text-xl text-text">
+                  {projectData?.name}
                 </h1>
-                <ul className="list-disc list-inside text-text-light">
-                  {projectData?.contribution.map((res) => {
-                    return <li key={res}>{res}</li>;
-                  })}
-                </ul>
+                <div className="text-text-light">
+                  {projectData?.descriptionFull.map((description, i) => (
+                    <div className="mb-2" key={i}>
+                      {description}
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div>
-                <h1 className="mt-8 text-2xl font-bold text-text mb-4">
+              <div className="mb-8">
+                {projectData?.contribution && (
+                  <>
+                    <h1 className="text-xl font-bold text-text mb-4">
+                      My Contribution
+                    </h1>
+                    <ul className="list-disc list-inside text-text-light">
+                      {projectData.contribution.map((res) => {
+                        return <li key={res}>{res}</li>;
+                      })}
+                    </ul>
+                  </>
+                )}
+              </div>
+              <div className="mb-8">
+                {projectData?.features && (
+                  <>
+                    <h1 className="text-xl font-bold text-text mb-4">
+                      Features and Techniques
+                    </h1>
+                    <ul className="list-disc list-inside text-text-light">
+                      {projectData.features.map((feature) => {
+                        return <li key={feature}>{feature}</li>;
+                      })}
+                    </ul>
+                  </>
+                )}
+              </div>
+              <div className="mb-8">
+                <h1 className="mt-8 text-xl font-bold text-text mb-4">
                   Screenshots
                 </h1>
                 <div className="text-text-light">
