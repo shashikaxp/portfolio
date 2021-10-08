@@ -1,6 +1,14 @@
 import { ProjectDetails } from './../../../../types/constants';
 import icon from './../../../../assets/img/projects/core-illumination/icon.png';
 
+import ci1 from './../../../../assets/img/projects/core-illumination/projects/ci1.jpg';
+import ci2 from './../../../../assets/img/projects/core-illumination/projects/ci2.png';
+import ci3 from './../../../../assets/img/projects/core-illumination/projects/ci3.png';
+import ci4 from './../../../../assets/img/projects/core-illumination/projects/ci4.png';
+import ci5 from './../../../../assets/img/projects/core-illumination/projects/ci5.png';
+import ci6 from './../../../../assets/img/projects/core-illumination/projects/ci6.png';
+import ci7 from './../../../../assets/img/projects/core-illumination/projects/ci7.jpg';
+
 export const projects: ProjectDetails[] = [
   {
     id: 'coreillumination',
@@ -19,7 +27,15 @@ export const projects: ProjectDetails[] = [
     ],
     descriptionShort:
       'ESPMI - It is a complete end to end Project and Portfolio Management tool',
-    screenShots: [],
+    screenShots: [
+      { src: ci1, ratio: 'horizontal' },
+      { src: ci2, ratio: 'horizontal' },
+      { src: ci4, ratio: 'horizontal' },
+      { src: ci5, ratio: 'horizontal' },
+      { src: ci6, ratio: 'horizontal' },
+      { src: ci3, ratio: 'portrait' },
+      { src: ci7, ratio: 'portrait' },
+    ],
     technologies: ['Angular', 'Java', 'Postgres', 'Docker'],
   },
 ];
