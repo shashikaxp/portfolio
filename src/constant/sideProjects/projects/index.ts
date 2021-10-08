@@ -59,6 +59,7 @@ export const projects: ProjectDetails[] = [
       'PostgreSQL',
       'Redis',
       'Puppeteer',
+      'GraphQL Code Generator',
     ],
   },
   {
