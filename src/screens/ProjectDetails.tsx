@@ -169,7 +169,7 @@ export const ProjectDetails: React.FC<AnimatedComponentProps> = ({
             </div>
             <animated.div
               style={styles}
-              className="mt-4 p-4 flex gap-7 items-center justify-center md:mt-0"
+              className="mt-4 p-4 flex gap-7 flex-wrap items-center justify-center md:mt-0"
             >
               {projectData?.actionButtons.map(({ data, type }) => {
                 return <ActionBtn key={type} data={data} type={type} />;
