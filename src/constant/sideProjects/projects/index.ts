@@ -93,7 +93,6 @@ export const projects: ProjectDetails[] = [
     features: [
       'Preload assets to improve page loading time',
       'Use react spring to have smooth animation',
-      'Great user experience',
     ],
     descriptionFull: [
       'As a part of a dynamic industry, I wanted to present my achievements and coding adventures in a trendy   style.  You are experiencing the final outcome, hope you are enjoying 🙂',
