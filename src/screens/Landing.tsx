@@ -97,9 +97,7 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
                   solutions. Exhibit expertise in development methodologies,
                   tools, and processes including identifying, and correcting
                   software defects, and writing well-designed, testable,
-                  efficient code. Recognized by peers, and senior leadership for
-                  the tenacity to gracefully handle the dynamics of a
-                  challenging and rapidly changing environment.
+                  efficient code.
                 </div>
                 <div className="mt-8 flex items-center justify-center md:items-end md:justify-end">
                   <div
