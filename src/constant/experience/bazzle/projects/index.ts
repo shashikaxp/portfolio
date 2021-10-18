@@ -27,7 +27,7 @@ export const projects: ProjectDetails[] = [
   {
     id: 'bazzle-events',
     descriptionFull: [
-      'It is a digital platform connects customers planning their own milestone events, with all the different types of vendors they might need, in a single app. Furthermore, customers can Get Quotes, Hire and Collaborate with vendors all within the same platform, providing a complete Vendor Management System',
+      'It is a digital platform connects customers planning their own milestone events, with all the different types of vendors they might need, in a single app. Furthermore, customers can Get Quotes, Hire and Collaborate with vendors all within the same platform, providing a complete Vendor Management System.',
     ],
     descriptionShort:
       'It is a digital platform connects customers planning their own milestone events, with all the different types of vendors they might need, in a single app',
@@ -53,6 +53,7 @@ export const projects: ProjectDetails[] = [
       'Cloud Functions',
     ],
     contribution: [
+      'Collect and document clients requirements and develop logical and physical specifications',
       'Develop a full ionic application that supports web, mobile and tablet devices',
       'Connect firebase SDK to fetch and manage application data',
       'Develop cloud functions and REST API to handle major application functionalities',
@@ -104,10 +105,10 @@ export const projects: ProjectDetails[] = [
       'Cloud Functions',
     ],
     contribution: [
-      'Address complex bugs in effective manner',
-      'Implement UI changes using Framework7 components',
-      'Introduce a new build system using webpack',
-      'Add on new features to the application.',
+      'Manage requirements analysis, detailed design, software development, and documentation, integration and deployment.',
+      'Investigate and collected information to resolve process or design issues found in the code base.',
+      'Implement UI changes using Framework7 components, introduce a new build system using Webpack and add new features to the application.',
+      'Identify software performance improvements through test driven development, automated, and comprehensive integration testing.',
     ],
     actionButtons: [
       {

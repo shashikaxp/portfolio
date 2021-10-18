@@ -74,7 +74,7 @@ export const projects: ProjectDetails[] = [
     ],
     descriptionFull: [
       'It is an improved version of SayHello application.',
-      'This mobile application has been developed using the React Native platform. It offers an updated user interface and enhanced experience to the users',
+      'This mobile application has been developed using the React Native platform. It offers an updated user interface and enhanced experience to the users.',
     ],
     descriptionShort: 'It is an improved version of SayHello application',
     screenShots: [
@@ -108,8 +108,9 @@ export const projects: ProjectDetails[] = [
       'Perform automated testing tasks',
     ],
     descriptionFull: [
-      'It is an English learning application introduced to improve unique skill level with personalized support',
-      'SayHello facilitates the users to send their recorded voice to instructors and get the feedback on their pronunciation and grammar',
+      'It is an English learning application introduced to improve unique skill level with personalized support.',
+      'SayHello facilitates the users to send their recorded voice to instructors and get the feedback on their pronunciation and grammar.',
+      'The app contains mini-games for practicing grammar.',
     ],
     descriptionShort:
       'It is an English learning application introduced to improve unique skill level with personalized support',
@@ -133,8 +134,8 @@ export const projects: ProjectDetails[] = [
   {
     name: 'DISC',
     descriptionFull: [
-      'It is a desktop application that includes behavior assessment games to measure user responses',
-      "DISC measures user responses through user's image recognition and voice instructions given in multiple languages.  Ultimately, it assesses the behavior with the response time and touch coordinates and generate reports",
+      'It is a desktop application that includes behavior assessment games to measure user responses.',
+      "DISC measures user responses through user's image recognition and voice instructions given in multiple languages.  Ultimately, it assesses the behavior with the response time and touch coordinates and generate reports.",
     ],
     descriptionShort:
       'It is a desktop application that includes behavior assessment games to measure user responses',
@@ -179,8 +180,8 @@ export const projects: ProjectDetails[] = [
       'Create custom UI components to use through out the application',
     ],
     descriptionFull: [
-      'SizeSwap is an online market place which facilitates the users to swap and trade sneakers',
-      'This platform allows users to exchange their sneaker with another sneaker (One to One) or trade with more sneakers based the market value',
+      'SizeSwap is an online market place which facilitates the users to swap and trade sneakers.',
+      'This platform allows users to exchange their sneaker with another sneaker (One to One) or trade with more sneakers based the market value.',
     ],
     descriptionShort:
       'SizeSwap is an online market place which facilitates the users to swap and trade sneakers',

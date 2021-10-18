@@ -19,9 +19,9 @@ export const projects: ProjectDetails[] = [
       'Provide technical support to the office staff',
     ],
     descriptionShort:
-      'This is the official website of Epigro (Pvt) Ltd developed to provide updated customers with latest products in the energy serving industry',
+      'This is the official website of Epigro (Pvt) Ltd developed to provide customers with latest products in the energy serving industry',
     descriptionFull: [
-      'Epigro is an integrated energy company, becoming a trusted business providing and installing quality solar systems to the residential, commercial, and industrial markets. This is the official website of Epigro (Pvt) Ltd developed to provide updated customers with latest products in the energy serving industry',
+      'Epigro is an integrated energy company, becoming a trusted business providing and installing quality solar systems to the residential, commercial, and industrial markets. This is the official website of Epigro (Pvt) Ltd developed to provide updated customers with latest products in the energy serving industry.',
     ],
     img: epigro_icon,
     actionButtons: [

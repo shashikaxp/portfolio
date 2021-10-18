@@ -19,8 +19,8 @@ export const projects: ProjectDetails[] = [
     descriptionShort:
       'Snailruns is an online platform for creating and delivering personalized greeting cards in Sri Lanka',
     descriptionFull: [
-      'Snailruns is an online platform for creating and delivering personalized greeting cards in Sri Lanka',
-      'They offer a vast collection of card designs under various occasions and users can create their own greeting cards by uploading pictures and ideas',
+      'Snailruns is an online platform for creating and delivering personalized greeting cards in Sri Lanka.',
+      'They offer a vast collection of card designs under various occasions and users can create their own greeting cards by uploading pictures and ideas.',
     ],
     actionButtons: [],
     contribution: [
@@ -38,7 +38,7 @@ export const projects: ProjectDetails[] = [
     descriptionShort:
       "A F Raymond is Sri Lanka's and the region's oldest firm of Funeral Directors",
     descriptionFull: [
-      "A F Raymond is Sri Lanka's and the region's oldest firm of Funeral Directors",
+      "A F Raymond is Sri Lanka's and the region's oldest firm of Funeral Directors.",
       "They offer webcast of a funeral service taking place from within the parlour. Viewed live over the internet, it allows everyone you love to attend your loved one's service, no matter where they are in the world.",
     ],
     actionButtons: [{ type: 'visit', data: 'https://afraymond.com/' }],
