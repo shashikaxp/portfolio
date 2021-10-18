@@ -32,10 +32,10 @@ export const projects: ProjectDetails[] = [
     ],
     screenShots: [
       { src: epigro_1, ratio: 'horizontal' },
-      { src: epigro_2, ratio: 'horizontal' },
-      { src: epigro_3, ratio: 'horizontal' },
       { src: epigro_mobile_1, ratio: 'portrait' },
+      { src: epigro_2, ratio: 'horizontal' },
       { src: epigro_mobile_2, ratio: 'portrait' },
+      { src: epigro_3, ratio: 'horizontal' },
       { src: epigro_mobile_3, ratio: 'portrait' },
     ],
     technologies: ['HTML', 'CSS', 'jQuery', 'Bootstrap'],

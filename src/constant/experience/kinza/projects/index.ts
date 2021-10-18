@@ -49,11 +49,11 @@ export const projects: ProjectDetails[] = [
     ],
     screenShots: [
       { src: afr1, ratio: 'horizontal' },
+      { src: afr_mobile_1, ratio: 'portrait' },
       { src: afr2, ratio: 'horizontal' },
+      { src: afr_mobile_2, ratio: 'portrait' },
       { src: afr3, ratio: 'horizontal' },
       { src: afr4, ratio: 'horizontal' },
-      { src: afr_mobile_1, ratio: 'portrait' },
-      { src: afr_mobile_2, ratio: 'portrait' },
     ],
     technologies: ['PHP', 'HTML', 'CSS'],
   },
