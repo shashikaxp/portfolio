@@ -94,10 +94,7 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
                   technical background in managing the full software development
                   lifecycle from concept through delivery of next-generation,
                   cost-effective, high-performance technology applications and
-                  solutions. Exhibit expertise in development methodologies,
-                  tools, and processes including identifying, and correcting
-                  software defects, and writing well-designed, testable,
-                  efficient code.
+                  solutions.
                 </div>
                 <div className="mt-8 flex items-center justify-center md:items-end md:justify-end">
                   <div
