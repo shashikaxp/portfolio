@@ -56,7 +56,13 @@ export const TopBar: React.FC<TopBarProps> = ({
           <AiOutlineMail />
         </a>
 
-        <GoFileCode />
+        <a
+          target="_blank"
+          href={process.env.PUBLIC_URL + '/Shashika_Weerakkody.pdf'}
+          rel="noreferrer"
+        >
+          <GoFileCode />
+        </a>
       </div>
     </div>
   );
