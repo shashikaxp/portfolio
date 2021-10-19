@@ -5,7 +5,7 @@ import { projects } from './projects';
 
 export const bazzle: CompanyData = {
   id: 0,
-  name: 'Spotfood Pty Ltd',
+  name: 'Bazzle Ventures Pty Ltd',
   country: 'Australia',
   bg: bazzleBg,
   position: 'Software Engineer (Part-Time)',
