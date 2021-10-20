@@ -27,12 +27,13 @@ export const projects: ProjectDetails[] = [
   {
     id: 'bazzle-events',
     descriptionFull: [
-      'It is a digital platform connects customers planning their own milestone events, with all the different types of vendors they might need, in a single app. Furthermore, customers can Get Quotes, Hire and Collaborate with vendors all within the same platform, providing a complete Vendor Management System.',
+      'Bazzle is a platform that solves the vendor management and planning problems for event organisers.',
+      'By using its rick pool of pre-screened vendors, event organisers can Find, Hire & Manage all the vendors required for an event, with a single request. Further to this, they plan the event end-to-end in the same platform.',
     ],
     descriptionShort:
       'It is a digital platform connects customers planning their own milestone events, with all the different types of vendors they might need, in a single app',
     img: icon,
-    name: 'Bazzle Events',
+    name: 'Bazzle',
     screenShots: [
       { ratio: 'horizontal', src: bazzle1 },
       { ratio: 'portrait', src: bazzle_m_1 },

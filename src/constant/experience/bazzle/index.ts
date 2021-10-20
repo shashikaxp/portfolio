@@ -8,9 +8,9 @@ export const bazzle: CompanyData = {
   name: 'Bazzle Ventures Pty Ltd',
   country: 'Australia',
   bg: bazzleBg,
-  position: 'Software Engineer (Part-Time)',
+  position: 'Senior Software Engineer (Part-Time)',
   time: 'Feb 2020 - Present',
   description:
-    ' It is a One stop-shop for professional event planners as well as DIY party planners. Currently I am working with Spotfood as a part-time software engineer. My contribution in developing Bazzle can be listed under two main segments as Events and Venue.',
+    'Bazzle is an All-in-one event planning platform that allows event organisers to find, hire and manage all the event vendors and plan their event, in one place. My contribution towards Bazzle has been towards establishing the technical architecture, the infrastructure and product development across its two main products, Bazzle and Bazzle Vendor.',
   projects: projects,
 };
