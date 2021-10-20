@@ -31,8 +31,8 @@ export const projects: ProjectDetails[] = [
       'Create "shared-types" libraries to use for both frontend and backend',
     ],
     descriptionFull: [
-      'Ithiri is an application which dynamically generates weekly shopping lists. This application has been developed based on weekly discounted items offered by two main supermarket chains in Australia, namely Woolworths and Coles.',
-      'The discounted price offered by supermarkets will be displayed under each product and users can add these items into their weekly grocery list. Ithiri will generates few shopping list options, based on the time and money saving. Ultimately, users can send these shopping list options to their emails and have a better shopping experience.',
+      'Ithiri is an application that powerfully produces weekly shopping records. This application has been created dependent on week-by-week discounted items presented by two fundamental supermarkets chains in Australia, in particular Woolworths and Coles.',
+      'The discounted price presented by the supermarkets will be shown under every item and clients add these items into their week after week grocery rundown. Ithiri will create not many shopping records choices, in light of the time and cash saving. Eventually, clients can send these shopping list choices to their messages and have a superior shopping experience.',
     ],
     descriptionShort:
       'Ithiri is an application which dynamically generates shopping lists based on weekly discounted items (Woolworths & Coles).',
@@ -74,9 +74,8 @@ export const projects: ProjectDetails[] = [
       'Supports both landscape and horizontal orientations',
     ],
     descriptionFull: [
-      'Unilife is a project developed as a course work under the master’s degree program. It is an endless running mobile game.',
-      'This is a single-player game in which the player can run until the game ends. This game tries to simulate the balance between academic and social life that every student tries to achieve. (Every social task will deduct a point from academic score and game will end if user dropped the academic score below certain threshold. To get the best score user must collect both academic and social tasks while balancing both positions).',
-      'The game was design focusing on mobile platforms. The player can swipe left or swipe right in order to move the character.',
+      'This is a solitary player game in which the player can run until the game finishes. This game attempts to mimic the harmony among academic and social activity that each student attempts to accomplish. (Each social task will deduct a point from the academic score and the game will end if the player dropped the academic score under a specific limit. To get the best score, you must gather both scholarly and social undertakings while adjusting the two positions).',
+      'The game was designed focusing on mobile platforms. The player can swipe left or swipe right to move the character.',
     ],
     descriptionShort:
       'Unilife is project developed as a course work under the master’s degree program. It is an endless running mobile game.',
@@ -95,7 +94,7 @@ export const projects: ProjectDetails[] = [
       'Use react spring to have smooth animation',
     ],
     descriptionFull: [
-      'As a part of a dynamic industry, I wanted to present my achievements and coding adventures in a trendy style. You are experiencing the final outcome, hope you are enjoying 🙂',
+      'As a part of a dynamic industry, I created a web portfolio with designs to showcase my best and most promising work examples, achievements and coding adventures in a trendy style to potential clients or employers. You are experiencing the final outcome, hope you are enjoying 🙂',
     ],
     descriptionShort:
       'As a part of a dynamic industry, I wanted to present my achievements and coding adventures in a trendy style.',
