@@ -38,7 +38,7 @@ export const Experience: React.FC = () => {
               opacity: opacity.to({ range: [0.0, 1.0], output: [0, 1] }),
             }}
           >
-            <PortfolioContainer data={CompanyData} />
+            <PortfolioContainer data={SideProjects} />
           </animated.div>
         ) : (
           <animated.div
@@ -47,7 +47,7 @@ export const Experience: React.FC = () => {
               opacity: opacity.to({ range: [1.0, 0.0], output: [1, 0] }),
             }}
           >
-            <PortfolioContainer data={SideProjects} />
+            <PortfolioContainer data={CompanyData} />
           </animated.div>
         )
       )}
