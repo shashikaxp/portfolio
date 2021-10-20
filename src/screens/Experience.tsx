@@ -10,8 +10,7 @@ import { useTransition } from '@react-spring/core';
 import { animated } from '@react-spring/web';
 
 export const Experience: React.FC = () => {
-  const [displayMode, setDisplayMode] =
-    useState<DisplaySection>('side-projects');
+  const [displayMode, setDisplayMode] = useState<DisplaySection>('experience');
 
   const [animationMode, setAnimationMode] = useState(true);
 
