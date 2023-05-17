@@ -4,7 +4,7 @@ import epigroBg from './../../../assets/img/epigro_bg.jpg';
 import { projects } from './projects';
 
 export const epigro: CompanyData = {
-  id: 3,
+  id: 4,
   name: 'Epigro Pvt Ltd',
   country: 'Sri Lanka',
   bg: epigroBg,
