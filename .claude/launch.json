@@ -1,0 +1,16 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start"],
+      "port": 3005,
+      "env": {
+        "BROWSER": "none",
+        "NODE_OPTIONS": "--openssl-legacy-provider",
+        "PORT": "3005"
+      }
+    }
+  ]
+}

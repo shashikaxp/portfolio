@@ -5,6 +5,9 @@ import React, { useState } from 'react';
 import { CompanyData } from './../types/constants';
 import { CompanyProfile } from './CompanyProfile';
 import { Projects } from './Projects';
+import { crossFade } from './../utils/animation';
+
+const COMPANY_FADE_MS = 250;
 
 interface PortfolioContainerProps {
   data: CompanyData[];
@@ -17,11 +20,9 @@ export const PortfolioContainer: React.FC<PortfolioContainerProps> = ({
 
   const transitions = useTransition(index, {
     key: index,
-    from: { opacity: 0.5 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0.5 },
-    config: { duration: 200 },
-    reset: data && data.length === 1,
+    // The section around the first panel already fades in, so don't fade twice.
+    initial: { opacity: 1 },
+    ...crossFade(COMPANY_FADE_MS),
   });
 
   const changeCompany = (i: number) => {
@@ -39,6 +40,7 @@ export const PortfolioContainer: React.FC<PortfolioContainerProps> = ({
                   className="w-c h-full w-screen bg-cover bg-center absolute top-0 left-0 items-center justify-between flex flex-col md:flex-row md:mt-0"
                   style={{
                     ...style,
+                    zIndex: i === index ? 1 : 0,
                     backgroundImage: `url(${data[i].bg})`,
                   }}
                 >
