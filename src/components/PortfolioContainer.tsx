@@ -6,15 +6,18 @@ import { CompanyData } from './../types/constants';
 import { CompanyProfile } from './CompanyProfile';
 import { Projects } from './Projects';
 import { crossFade } from './../utils/animation';
+import { useArrowKeys } from './../hooks/useArrowKeys';
 
 const COMPANY_FADE_MS = 250;
 
 interface PortfolioContainerProps {
   data: CompanyData[];
+  isActive: boolean;
 }
 
 export const PortfolioContainer: React.FC<PortfolioContainerProps> = ({
   data,
+  isActive,
 }) => {
   const [index, setIndex] = useState(0);
 
@@ -28,6 +31,14 @@ export const PortfolioContainer: React.FC<PortfolioContainerProps> = ({
   const changeCompany = (i: number) => {
     setIndex(i);
   };
+
+  useArrowKeys(
+    {
+      ArrowUp: () => setIndex((ci) => Math.max(ci - 1, 0)),
+      ArrowDown: () => setIndex((ci) => Math.min(ci + 1, data.length - 1)),
+    },
+    isActive
+  );
 
   return (
     <>
@@ -52,7 +63,10 @@ export const PortfolioContainer: React.FC<PortfolioContainerProps> = ({
                     />
                   </div>
                   <div className="w-full h-1/2 flex-1 md:ml-20 md:w-2/4 md:pl-4 md:px-0">
-                    <Projects projects={data[i].projects} />
+                    <Projects
+                      projects={data[i].projects}
+                      isActive={isActive && i === index}
+                    />
                   </div>
                 </animated.div>
               </div>

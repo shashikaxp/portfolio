@@ -6,12 +6,14 @@ import { useSprings, useSpring, animated } from 'react-spring';
 import { ProjectDetails } from './../types/constants';
 
 import { useMediaQuery } from 'react-responsive';
+import { useArrowKeys } from './../hooks/useArrowKeys';
 
 interface ProjectsProps {
   projects: ProjectDetails[];
+  isActive: boolean;
 }
 
-export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
+export const Projects: React.FC<ProjectsProps> = ({ projects, isActive }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const history = useHistory();
   const isMD = useMediaQuery({ query: '(min-width: 768px)' });
@@ -89,6 +91,8 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
       }
     });
   };
+
+  useArrowKeys({ ArrowLeft: prev, ArrowRight: next }, isActive);
 
   const getX = (index: number) => {
     let x: number | null;

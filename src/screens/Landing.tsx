@@ -6,6 +6,9 @@ import Div100vh from 'react-div-100vh';
 
 import { useLoadAssets } from './../hooks/useLoadAssets';
 
+// True once the intro has slid away and the portfolio underneath is visible.
+export const PortfolioRevealedContext = React.createContext(false);
+
 interface LandingProps {}
 
 export const Landing: React.FC<LandingProps> = ({ children }) => {
@@ -119,7 +122,9 @@ export const Landing: React.FC<LandingProps> = ({ children }) => {
           </div>
         )}
 
-        {children}
+        <PortfolioRevealedContext.Provider value={projects}>
+          {children}
+        </PortfolioRevealedContext.Provider>
       </div>
     </Div100vh>
   );
